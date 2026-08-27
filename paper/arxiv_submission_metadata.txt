@@ -65,11 +65,17 @@ Preferred source upload:
 Compiled preview:
   paper/arxiv.pdf
 
-Current SHA-256
----------------
+Final SHA-256
+------------
 
-Regenerate paper/arxiv.pdf and dist/segbench-gc-arxiv-source.zip after the
-final source build.
+paper/arxiv.pdf
+  aba7d04e590d8c7be483aec701d97d6e59d1afae7443624e863ee3acc6767ec4
+
+dist/segbench-gc-arxiv-source.zip
+  77e75476eeeafa04d792021d426e32fe6998be75e69e06dd0a9feab0988d156c
+
+dist/segbench-gc-anonymous.zip
+  fb22c93d549fdc1151ff49d43b6b7843ff564d9ece7d6fed2513f3e3773c91eb
 
 Recommended license
 -------------------
