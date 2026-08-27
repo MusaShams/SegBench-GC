@@ -46,19 +46,19 @@ Final package hashes
 --------------------
 
 paper/main.pdf
-  4beaf82a70c3efd968b593799a13d67a117a80d681e60a1d446ca822fe38f3f3
+  84cef45ef02d788840ce67be6131f286ff3b26a175f891467479a38795552271
 
 dist/segbench-gc-anonymous.zip
-  4db187bb8658adae9583aa3b500ec3ca56220e64dacf33080d8793e4ec6bcff9
+  fb22c93d549fdc1151ff49d43b6b7843ff564d9ece7d6fed2513f3e3773c91eb
 
 Reference arXiv artifacts
 -------------------------
 
 paper/arxiv.pdf
-  301b7995a890887929297af93a77b403d9dfc01ab11bee267bd0fa08410c1283
+  aba7d04e590d8c7be483aec701d97d6e59d1afae7443624e863ee3acc6767ec4
 
 dist/segbench-gc-arxiv-source.zip
-  f5a1fdf4a210a26d35dba602d98a3180e2f867b4c74c934d405f5a75e326d8e1
+  77e75476eeeafa04d792021d426e32fe6998be75e69e06dd0a9feab0988d156c
 
 After abstract submission
 -------------------------
