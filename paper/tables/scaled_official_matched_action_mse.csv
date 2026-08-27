@@ -1,0 +1,7 @@
+label,algorithm,suite,task,seed,action_chunk_size,event,metric,value,selected_horizon_mean,selected_horizon_count,path
+gciql_official_matched_seed_0,iql,ogbench,pointmaze-medium-stitch-v0,0,1,eval,eval_action_mse,1.4809964895248413,,0,runs/scaled-official-matched-pilot/gciql_official_matched/seed_0/metrics.jsonl
+gciql_official_matched_seed_1,iql,ogbench,pointmaze-medium-stitch-v0,1,1,eval,eval_action_mse,1.3980848789215088,,0,runs/scaled-official-matched-pilot/gciql_official_matched/seed_1/metrics.jsonl
+gciql_official_matched_seed_2,iql,ogbench,pointmaze-medium-stitch-v0,2,1,eval,eval_action_mse,1.3313477039337158,,0,runs/scaled-official-matched-pilot/gciql_official_matched/seed_2/metrics.jsonl
+adaptive_iql_official_matched_seed_0,adaptive_iql,ogbench,pointmaze-medium-stitch-v0,0,1,eval,eval_action_mse,1.1919746398925781,3.996388671875,1000,runs/scaled-official-matched-pilot/adaptive_iql_official_matched/seed_0/metrics.jsonl
+adaptive_iql_official_matched_seed_1,adaptive_iql,ogbench,pointmaze-medium-stitch-v0,1,1,eval,eval_action_mse,1.5526378154754639,4.2149384765625,1000,runs/scaled-official-matched-pilot/adaptive_iql_official_matched/seed_1/metrics.jsonl
+adaptive_iql_official_matched_seed_2,adaptive_iql,ogbench,pointmaze-medium-stitch-v0,2,1,eval,eval_action_mse,1.2891438007354736,4.099970703125,1000,runs/scaled-official-matched-pilot/adaptive_iql_official_matched/seed_2/metrics.jsonl

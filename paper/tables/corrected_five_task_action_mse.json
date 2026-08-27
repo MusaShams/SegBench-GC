@@ -1,0 +1,171 @@
+{
+  "aggregate": {
+    "ci_high": 0.5200492292642593,
+    "ci_low": 0.4910818934440613,
+    "iqm": 0.5049376636743546,
+    "mean": 0.5057152211666107,
+    "median": 0.5047587454319
+  },
+  "by_algorithm": {
+    "adaptive_iql": {
+      "ci_high": 0.49856436252593994,
+      "ci_low": 0.4879176616668701,
+      "iqm": 0.4918015996615092,
+      "mean": 0.4918015996615092,
+      "median": 0.48892277479171753
+    },
+    "fixed_horizon_iql_h4": {
+      "ci_high": 0.526623010635376,
+      "ci_low": 0.5109531283378601,
+      "iqm": 0.5196288426717123,
+      "mean": 0.5196288426717123,
+      "median": 0.5213103890419006
+    }
+  },
+  "by_algorithm_chunk": {
+    "adaptive_iql_chunk_1": {
+      "ci_high": 0.49856436252593994,
+      "ci_low": 0.4879176616668701,
+      "iqm": 0.4918015996615092,
+      "mean": 0.4918015996615092,
+      "median": 0.48892277479171753
+    },
+    "fixed_horizon_iql_h4_chunk_1": {
+      "ci_high": 0.526623010635376,
+      "ci_low": 0.5109531283378601,
+      "iqm": 0.5196288426717123,
+      "mean": 0.5196288426717123,
+      "median": 0.5213103890419006
+    }
+  },
+  "by_label_group": {
+    "adaptive_iql_sparse_centered_weighted": {
+      "ci_high": 0.49856436252593994,
+      "ci_low": 0.4879176616668701,
+      "iqm": 0.4918015996615092,
+      "mean": 0.4918015996615092,
+      "median": 0.48892277479171753
+    },
+    "fixed_horizon_iql_h4": {
+      "ci_high": 0.526623010635376,
+      "ci_low": 0.5109531283378601,
+      "iqm": 0.5196288426717123,
+      "mean": 0.5196288426717123,
+      "median": 0.5213103890419006
+    }
+  },
+  "runs": [
+    {
+      "action_chunk_size": 1,
+      "algorithm": "fixed_horizon_iql_h4",
+      "event": "eval",
+      "label": "fixed_horizon_iql_h4_seed_0",
+      "metric": "eval_action_mse",
+      "path": "runs/corrected-five-task-pilot/fixed_horizon_iql_h4/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "4": 1000
+      },
+      "selected_horizon_mean": 4.0,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.5109531283378601
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "fixed_horizon_iql_h4",
+      "event": "eval",
+      "label": "fixed_horizon_iql_h4_seed_1",
+      "metric": "eval_action_mse",
+      "path": "runs/corrected-five-task-pilot/fixed_horizon_iql_h4/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "4": 1000
+      },
+      "selected_horizon_mean": 4.0,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.5213103890419006
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "fixed_horizon_iql_h4",
+      "event": "eval",
+      "label": "fixed_horizon_iql_h4_seed_2",
+      "metric": "eval_action_mse",
+      "path": "runs/corrected-five-task-pilot/fixed_horizon_iql_h4/seed_2/metrics.jsonl",
+      "seed": 2,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "4": 1000
+      },
+      "selected_horizon_mean": 4.0,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.526623010635376
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_sparse_centered_weighted_seed_0",
+      "metric": "eval_action_mse",
+      "path": "runs/corrected-five-task-pilot/adaptive_iql_sparse_centered_weighted/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "1": 410,
+        "2": 336,
+        "3": 168,
+        "4": 86
+      },
+      "selected_horizon_mean": 2.40165625,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.49856436252593994
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_sparse_centered_weighted_seed_1",
+      "metric": "eval_action_mse",
+      "path": "runs/corrected-five-task-pilot/adaptive_iql_sparse_centered_weighted/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "1": 621,
+        "2": 110,
+        "3": 178,
+        "4": 89,
+        "5": 2
+      },
+      "selected_horizon_mean": 2.23234375,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.48892277479171753
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_sparse_centered_weighted_seed_2",
+      "metric": "eval_action_mse",
+      "path": "runs/corrected-five-task-pilot/adaptive_iql_sparse_centered_weighted/seed_2/metrics.jsonl",
+      "seed": 2,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "1": 649,
+        "2": 166,
+        "3": 162,
+        "4": 23
+      },
+      "selected_horizon_mean": 2.05246875,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.4879176616668701
+    }
+  ]
+}

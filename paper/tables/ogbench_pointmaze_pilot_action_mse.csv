@@ -1,0 +1,5 @@
+label,algorithm,suite,task,seed,event,metric,value,selected_horizon_mean,selected_horizon_count,path
+iql_seed_0,iql,ogbench,pointmaze-medium-stitch-v0,0,eval,eval_action_mse,0.42635205388069153,,0,runs/ogbench-pointmaze-pilot/iql/seed_0/metrics.jsonl
+iql_seed_1,iql,ogbench,pointmaze-medium-stitch-v0,1,eval,eval_action_mse,0.47821563482284546,,0,runs/ogbench-pointmaze-pilot/iql/seed_1/metrics.jsonl
+adaptive_iql_seed_0,adaptive_iql,ogbench,pointmaze-medium-stitch-v0,0,eval,eval_action_mse,0.44770005345344543,1.14,500,runs/ogbench-pointmaze-pilot/adaptive_iql/seed_0/metrics.jsonl
+adaptive_iql_seed_1,adaptive_iql,ogbench,pointmaze-medium-stitch-v0,1,eval,eval_action_mse,0.42671215534210205,1.126,500,runs/ogbench-pointmaze-pilot/adaptive_iql/seed_1/metrics.jsonl

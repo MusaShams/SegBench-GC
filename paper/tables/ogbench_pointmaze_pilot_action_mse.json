@@ -1,0 +1,89 @@
+{
+  "aggregate": {
+    "ci_high": 0.47821563482284546,
+    "ci_low": 0.42635205388069153,
+    "iqm": 0.43720610439777374,
+    "mean": 0.4447449743747711,
+    "median": 0.43720610439777374
+  },
+  "by_algorithm": {
+    "adaptive_iql": {
+      "ci_high": 0.44770005345344543,
+      "ci_low": 0.42671215534210205,
+      "iqm": 0.43720610439777374,
+      "mean": 0.43720610439777374,
+      "median": 0.43720610439777374
+    },
+    "iql": {
+      "ci_high": 0.47821563482284546,
+      "ci_low": 0.42635205388069153,
+      "iqm": 0.4522838443517685,
+      "mean": 0.4522838443517685,
+      "median": 0.4522838443517685
+    }
+  },
+  "runs": [
+    {
+      "algorithm": "iql",
+      "event": "eval",
+      "label": "iql_seed_0",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-pointmaze-pilot/iql/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 0,
+      "selected_horizon_histogram": {},
+      "selected_horizon_mean": null,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.42635205388069153
+    },
+    {
+      "algorithm": "iql",
+      "event": "eval",
+      "label": "iql_seed_1",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-pointmaze-pilot/iql/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 0,
+      "selected_horizon_histogram": {},
+      "selected_horizon_mean": null,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.47821563482284546
+    },
+    {
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_seed_0",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-pointmaze-pilot/adaptive_iql/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 500,
+      "selected_horizon_histogram": {
+        "1": 430,
+        "2": 70
+      },
+      "selected_horizon_mean": 1.14,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.44770005345344543
+    },
+    {
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_seed_1",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-pointmaze-pilot/adaptive_iql/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 500,
+      "selected_horizon_histogram": {
+        "1": 491,
+        "8": 9
+      },
+      "selected_horizon_mean": 1.126,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.42671215534210205
+    }
+  ]
+}

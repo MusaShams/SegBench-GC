@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
+for seed in 0 1 2; do
+  segmentation_seed=$((10000 + seed))
+  for mode in robust naive; do
+    if [[ "$mode" == "robust" ]]; then
+      bootstrap=true
+    else
+      bootstrap=false
+    fi
+    output_dir="runs/segmentation-random-100k-gate/${mode}/seed_${seed}"
+    log_dir="logs/segmentation-random-100k-gate/${mode}-seed${seed}"
+
+    mkdir -p "$log_dir"
+    if [[ -f "$log_dir/SUCCESS" ]]; then
+      continue
+    fi
+
+    rm -rf "$output_dir"
+    if /usr/bin/time -v \
+      -o "$log_dir/time.txt" \
+      .venv/bin/python scripts/train.py \
+        --config configs/experiment/ogbench_full.yaml \
+        --config configs/env/ogbench_official_goals.yaml \
+        --config configs/algo/static_mixture_iql_official_matched.yaml \
+        --output-dir "$output_dir" \
+        --set device=cuda \
+        --set seed="$seed" \
+        --set steps=100000 \
+        --set log_interval=5000 \
+        --set checkpoint_interval=0 \
+        --set rollout_episodes=10 \
+        --set rollout_max_steps=1000 \
+        --set eval_batch_size=4096 \
+        --set backup_segmentation_probability=0.04 \
+        --set backup_segmentation_seed="$segmentation_seed" \
+        --set bootstrap_at_backup_boundaries="$bootstrap" \
+        2>&1 | tee "$log_dir/train.log"; then
+      touch "$log_dir/SUCCESS"
+    else
+      status=${PIPESTATUS[0]}
+      touch "$log_dir/FAILED"
+      exit "$status"
+    fi
+  done
+done

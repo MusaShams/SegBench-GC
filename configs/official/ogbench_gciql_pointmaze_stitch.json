@@ -1,0 +1,30 @@
+{
+  "repository": "https://github.com/seohongpark/ogbench",
+  "revision": "1d4140997f60c52c6fb0702ec100dc988b18c548",
+  "implementation": "impls/agents/gciql.py",
+  "environment": "pointmaze-medium-stitch-v0",
+  "train_steps": 1000000,
+  "batch_size": 1024,
+  "evaluation_tasks": 5,
+  "evaluation_episodes_per_task": 50,
+  "state_based_seeds": 8,
+  "agent_overrides": {
+    "actor_p_randomgoal": 0.5,
+    "actor_p_trajgoal": 0.5,
+    "alpha": 0.003
+  },
+  "default_agent": {
+    "learning_rate": 0.0003,
+    "hidden_dims": [512, 512, 512],
+    "discount": 0.99,
+    "target_tau": 0.005,
+    "expectile": 0.9,
+    "actor_loss": "ddpgbc",
+    "value_goal_probabilities": {
+      "current": 0.2,
+      "trajectory": 0.5,
+      "random": 0.3
+    },
+    "negative_goal_reward": true
+  }
+}

@@ -1,0 +1,50 @@
+\section{Continuation-valid target identity}
+\label{app:cvt}
+
+Consider a nonterminal artificial cut after $k<h$ valid transitions. Let $V$ satisfy the continuing Bellman equation along the stored trajectory. The CVT target is
+\begin{equation}
+  y_{\mathrm{CVT}}
+  =
+  \sum_{i=0}^{k-1}\gamma^i r_{t+i}
+  + \gamma^k V(s_{t+k},g).
+\end{equation}
+The corresponding artificial-terminal target is
+\begin{equation}
+  y_{\mathrm{naive}}
+  =
+  \sum_{i=0}^{k-1}\gamma^i r_{t+i},
+\end{equation}
+so
+\begin{equation}
+  y_{\mathrm{naive}}-y_{\mathrm{CVT}}
+  =-\gamma^kV(s_{t+k},g).
+\end{equation}
+Repeatedly expanding a consistent continuing value for the remaining $h-k$ transitions recovers the uncut backup. This identity applies only to a boundary whose successor is part of the same continuing process; genuine goal completion, environment termination, reset discontinuities, and missing successors remain noncontinuing. An explicitly finite-horizon value would require a residual-horizon quantity such as $V^{(h-k)}$.
+
+\section{Primary experimental details}
+\label{app:details}
+
+The primary learner uses horizons $\{1,2,4,8\}$, twin critics, horizon-indexed value and actor outputs, three hidden layers of width 512, GELU activations, layer normalization, discount $0.99$, expectile $0.9$, batch size 1024, learning rate $3\times10^{-4}$, target update coefficient $0.005$, and DDPG+BC coefficient $0.003$. The actor executes a fixed horizon mixture with weights $(0.05,0.05,0.05,0.85)$.
+
+PointMaze goals follow the official OGBench mixture: value goals use current, future-trajectory, and random states with probabilities $(0.2,0.5,0.3)$; actor goals mix future-trajectory and random states equally. The source adapter uses non-compacted OGBench transitions so every continuing collection boundary retains its stored successor. The OGBench revision used in the reported experiments is \texttt{1d4140997f60c52c6fb0702ec100dc988b18c548}.
+
+The primary intervention samples exactly 35,000 artificial cuts independently for segmentation seeds 101, 102, and 103. Optimization seeds are 0, 1, and 2. Source boundaries remain continuation-valid in Original, CVT, and naive conditions; at artificial cuts, CVT bootstraps while naive handling does not. Final reevaluation uses 50 episodes for each of five fixed tasks.
+
+\section{Independent NS validation details}
+\label{app:independent}
+
+The independent baseline is the published NS configuration from the Decoupled Q-Chunking repository \cite{li2026dqc}, pinned at revision \texttt{df898256a77f3594b54a7268bd5f89915981da35}. We use Puzzle-4x5 Play with two critics, policy chunk size one, backup horizon 25, no chunk critic, expectile distillation, quantile implicit backup, mean Q aggregation, $\kappa_b=0.7$, $\kappa_d=0.5$, and batch size 4096. This preserves the paper's $n$-step learner while avoiding a chunk-critic confound in which post-cut actions would enter the critic input.
+
+Artificial cuts are sampled at 3.5\% of eligible successor-state locations with segmentation seed 101 and are fixed across optimization seeds 100001, 200002, and 300003. CVT and naive minibatch pairing is checked by resetting the NumPy sampling state before each draw; every batch field must match except the continuation mask on cut-affected backups. A 4096-sample verification batch contained 1846 cut-affected backups and passed this equality check. Training uses 250k updates, and final reevaluation uses 50 episodes per task.
+
+\section{Seed-level results}
+\label{app:seeds}
+
+\input{tables/segbench_gc_key_seed_results}
+
+Primary segmentation-seed means are Naive: 20.5\%, 31.9\%, and 4.8\%; CVT: 39.6\%, 42.3\%, and 35.5\% for seeds 101, 102, and 103, respectively.
+
+\section{Artifact organization}
+\label{app:artifacts}
+
+Every training run writes a JSONL file containing the resolved configuration, optimization seed, boundary counts and continuation assumptions, total update step, held-out evaluation, task-level rollout success, and checkpoint metadata. Final reevaluations, target-identity diagnostics, and boundary-local critic contrasts are stored separately from training logs. The aggregation protocol averages segmentation realizations within an optimization seed before aggregating optimization seeds. Raw checkpoints are excluded from source control because of size; released manifests and generated tables provide provenance for the reported summaries.

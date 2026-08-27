@@ -1,0 +1,12 @@
+algorithm: adaptive_horizon_chunking
+horizons: [1, 2, 4, 8, 16]
+chunk_size: 4
+temperature: 1.0
+uncertainty_penalty: 0.25
+learned_gate: true
+gate_learning_rate: 0.001
+gate_hidden_dim: 32
+batch_size: 32
+learning_rate: 0.05
+critic_learning_rate: 0.005
+l2_regularization: 0.0001

@@ -1,0 +1,205 @@
+{
+  "aggregate": {
+    "ci_high": 0.25,
+    "ci_low": 0.0,
+    "iqm": 0.125,
+    "mean": 0.125,
+    "median": 0.125
+  },
+  "by_algorithm": {
+    "adaptive_iql": {
+      "ci_high": 0.25,
+      "ci_low": 0.0,
+      "iqm": 0.125,
+      "mean": 0.125,
+      "median": 0.125
+    },
+    "fixed_horizon_iql_h4": {
+      "ci_high": 0.25,
+      "ci_low": 0.0,
+      "iqm": 0.125,
+      "mean": 0.125,
+      "median": 0.125
+    }
+  },
+  "by_algorithm_chunk": {
+    "adaptive_iql_chunk_1": {
+      "ci_high": 0.25,
+      "ci_low": 0.0,
+      "iqm": 0.125,
+      "mean": 0.125,
+      "median": 0.125
+    },
+    "adaptive_iql_chunk_4": {
+      "ci_high": 0.25,
+      "ci_low": 0.0,
+      "iqm": 0.125,
+      "mean": 0.125,
+      "median": 0.125
+    },
+    "fixed_horizon_iql_h4_chunk_1": {
+      "ci_high": 0.25,
+      "ci_low": 0.0,
+      "iqm": 0.125,
+      "mean": 0.125,
+      "median": 0.125
+    },
+    "fixed_horizon_iql_h4_chunk_4": {
+      "ci_high": 0.25,
+      "ci_low": 0.0,
+      "iqm": 0.125,
+      "mean": 0.125,
+      "median": 0.125
+    }
+  },
+  "runs": [
+    {
+      "action_chunk_size": 1,
+      "algorithm": "fixed_horizon_iql_h4",
+      "event": "rollout_eval",
+      "label": "fixed_horizon_iql_h4_seed_0",
+      "metric": "rollout_success_rate",
+      "path": "runs/ogbench-pointmaze-action-chunk-ablation/fixed_horizon_iql_h4/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 500,
+      "selected_horizon_histogram": {
+        "4": 500
+      },
+      "selected_horizon_mean": 4.0,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.25
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "fixed_horizon_iql_h4",
+      "event": "rollout_eval",
+      "label": "fixed_horizon_iql_h4_seed_1",
+      "metric": "rollout_success_rate",
+      "path": "runs/ogbench-pointmaze-action-chunk-ablation/fixed_horizon_iql_h4/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 500,
+      "selected_horizon_histogram": {
+        "4": 500
+      },
+      "selected_horizon_mean": 4.0,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.0
+    },
+    {
+      "action_chunk_size": 4,
+      "algorithm": "fixed_horizon_iql_h4",
+      "event": "rollout_eval",
+      "label": "fixed_horizon_iql_h4_chunked_seed_0",
+      "metric": "rollout_success_rate",
+      "path": "runs/ogbench-pointmaze-action-chunk-ablation/fixed_horizon_iql_h4_chunked/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 500,
+      "selected_horizon_histogram": {
+        "4": 500
+      },
+      "selected_horizon_mean": 4.0,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.25
+    },
+    {
+      "action_chunk_size": 4,
+      "algorithm": "fixed_horizon_iql_h4",
+      "event": "rollout_eval",
+      "label": "fixed_horizon_iql_h4_chunked_seed_1",
+      "metric": "rollout_success_rate",
+      "path": "runs/ogbench-pointmaze-action-chunk-ablation/fixed_horizon_iql_h4_chunked/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 500,
+      "selected_horizon_histogram": {
+        "4": 500
+      },
+      "selected_horizon_mean": 4.0,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.0
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "rollout_eval",
+      "label": "adaptive_iql_sparse_centered_weighted_seed_0",
+      "metric": "rollout_success_rate",
+      "path": "runs/ogbench-pointmaze-action-chunk-ablation/adaptive_iql_sparse_centered_weighted/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 500,
+      "selected_horizon_histogram": {
+        "1": 28,
+        "2": 50,
+        "4": 299,
+        "8": 123
+      },
+      "selected_horizon_mean": 4.616,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.25
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "rollout_eval",
+      "label": "adaptive_iql_sparse_centered_weighted_seed_1",
+      "metric": "rollout_success_rate",
+      "path": "runs/ogbench-pointmaze-action-chunk-ablation/adaptive_iql_sparse_centered_weighted/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 500,
+      "selected_horizon_histogram": {
+        "1": 30,
+        "2": 43,
+        "4": 290,
+        "8": 137
+      },
+      "selected_horizon_mean": 4.744,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.0
+    },
+    {
+      "action_chunk_size": 4,
+      "algorithm": "adaptive_iql",
+      "event": "rollout_eval",
+      "label": "adaptive_iql_sparse_centered_weighted_chunked_seed_0",
+      "metric": "rollout_success_rate",
+      "path": "runs/ogbench-pointmaze-action-chunk-ablation/adaptive_iql_sparse_centered_weighted_chunked/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 500,
+      "selected_horizon_histogram": {
+        "1": 23,
+        "2": 39,
+        "4": 96,
+        "8": 342
+      },
+      "selected_horizon_mean": 6.442,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.25
+    },
+    {
+      "action_chunk_size": 4,
+      "algorithm": "adaptive_iql",
+      "event": "rollout_eval",
+      "label": "adaptive_iql_sparse_centered_weighted_chunked_seed_1",
+      "metric": "rollout_success_rate",
+      "path": "runs/ogbench-pointmaze-action-chunk-ablation/adaptive_iql_sparse_centered_weighted_chunked/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 500,
+      "selected_horizon_histogram": {
+        "1": 49,
+        "2": 39,
+        "4": 59,
+        "8": 353
+      },
+      "selected_horizon_mean": 6.374,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.0
+    }
+  ]
+}

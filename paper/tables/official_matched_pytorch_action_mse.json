@@ -1,0 +1,126 @@
+{
+  "aggregate": {
+    "ci_high": 1.3283793926239014,
+    "ci_low": 1.0513916015625,
+    "iqm": 1.2304394841194153,
+    "mean": 1.210162490606308,
+    "median": 1.2304394841194153
+  },
+  "by_algorithm": {
+    "adaptive_iql": {
+      "ci_high": 1.2129454612731934,
+      "ci_low": 1.0513916015625,
+      "iqm": 1.1321685314178467,
+      "mean": 1.1321685314178467,
+      "median": 1.1321685314178467
+    },
+    "iql": {
+      "ci_high": 1.3283793926239014,
+      "ci_low": 1.2479335069656372,
+      "iqm": 1.2881564497947693,
+      "mean": 1.2881564497947693,
+      "median": 1.2881564497947693
+    }
+  },
+  "by_algorithm_chunk": {
+    "adaptive_iql_chunk_1": {
+      "ci_high": 1.2129454612731934,
+      "ci_low": 1.0513916015625,
+      "iqm": 1.1321685314178467,
+      "mean": 1.1321685314178467,
+      "median": 1.1321685314178467
+    },
+    "iql_chunk_1": {
+      "ci_high": 1.3283793926239014,
+      "ci_low": 1.2479335069656372,
+      "iqm": 1.2881564497947693,
+      "mean": 1.2881564497947693,
+      "median": 1.2881564497947693
+    }
+  },
+  "by_label_group": {
+    "adaptive_iql_official_matched": {
+      "ci_high": 1.2129454612731934,
+      "ci_low": 1.0513916015625,
+      "iqm": 1.1321685314178467,
+      "mean": 1.1321685314178467,
+      "median": 1.1321685314178467
+    },
+    "gciql_official_matched": {
+      "ci_high": 1.3283793926239014,
+      "ci_low": 1.2479335069656372,
+      "iqm": 1.2881564497947693,
+      "mean": 1.2881564497947693,
+      "median": 1.2881564497947693
+    }
+  },
+  "runs": [
+    {
+      "action_chunk_size": 1,
+      "algorithm": "iql",
+      "event": "eval",
+      "label": "gciql_official_matched_seed_0",
+      "metric": "eval_action_mse",
+      "path": "runs/official-matched-pytorch-pilot/gciql_official_matched/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 0,
+      "selected_horizon_histogram": {},
+      "selected_horizon_mean": null,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 1.3283793926239014
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "iql",
+      "event": "eval",
+      "label": "gciql_official_matched_seed_1",
+      "metric": "eval_action_mse",
+      "path": "runs/official-matched-pytorch-pilot/gciql_official_matched/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 0,
+      "selected_horizon_histogram": {},
+      "selected_horizon_mean": null,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 1.2479335069656372
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_official_matched_seed_0",
+      "metric": "eval_action_mse",
+      "path": "runs/official-matched-pytorch-pilot/adaptive_iql_official_matched/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 200,
+      "selected_horizon_histogram": {
+        "1": 10,
+        "2": 126,
+        "3": 64
+      },
+      "selected_horizon_mean": 2.630322265625,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 1.2129454612731934
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_official_matched_seed_1",
+      "metric": "eval_action_mse",
+      "path": "runs/official-matched-pytorch-pilot/adaptive_iql_official_matched/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 200,
+      "selected_horizon_histogram": {
+        "2": 156,
+        "3": 44
+      },
+      "selected_horizon_mean": 2.6105419921875,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 1.0513916015625
+    }
+  ]
+}

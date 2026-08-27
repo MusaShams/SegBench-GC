@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adaptive-gcrl"
+version = "0.1.0"
+description = "Segmentation-invariance stress tests for multi-step offline goal-conditioned reinforcement learning."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "numpy>=1.24",
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+]
+rl = [
+  "gymnasium>=0.29",
+  "torch>=2.2",
+]
+benchmarks = [
+  "mujoco==3.3.7",
+  "ogbench==1.2.1",
+]
+analysis = [
+  "matplotlib>=3.8",
+  "pandas>=2.0",
+  "scipy>=1.11",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "src"]
+addopts = "-q"

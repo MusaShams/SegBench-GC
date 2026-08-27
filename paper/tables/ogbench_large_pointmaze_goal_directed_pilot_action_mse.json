@@ -1,0 +1,295 @@
+{
+  "aggregate": {
+    "ci_high": 0.4254790251453717,
+    "ci_low": 0.40323349349200727,
+    "iqm": 0.4080839802821477,
+    "mean": 0.4147663836677869,
+    "median": 0.40841686725616455
+  },
+  "by_algorithm": {
+    "adaptive_iql": {
+      "ci_high": 0.411478653550148,
+      "ci_low": 0.3987926095724106,
+      "iqm": 0.4055112898349762,
+      "mean": 0.4052744060754776,
+      "median": 0.404569610953331
+    },
+    "fixed_horizon_iql_h4": {
+      "ci_high": 0.4470072537660599,
+      "ci_low": 0.4048350900411606,
+      "iqm": 0.4214906543493271,
+      "mean": 0.42425836126009625,
+      "median": 0.41051527857780457
+    }
+  },
+  "by_algorithm_chunk": {
+    "adaptive_iql_chunk_1": {
+      "ci_high": 0.411478653550148,
+      "ci_low": 0.3987926095724106,
+      "iqm": 0.4055112898349762,
+      "mean": 0.4052744060754776,
+      "median": 0.404569610953331
+    },
+    "fixed_horizon_iql_h4_chunk_1": {
+      "ci_high": 0.4470072537660599,
+      "ci_low": 0.4048350900411606,
+      "iqm": 0.4214906543493271,
+      "mean": 0.42425836126009625,
+      "median": 0.41051527857780457
+    }
+  },
+  "by_label_group": {
+    "adaptive_iql_sparse_centered_weighted": {
+      "ci_high": 0.410899817943573,
+      "ci_low": 0.4026201069355011,
+      "iqm": 0.4066796799500783,
+      "mean": 0.4066796799500783,
+      "median": 0.4065191149711609
+    },
+    "adaptive_iql_sparse_centered_weighted_goal_directed": {
+      "ci_high": 0.41463616490364075,
+      "ci_low": 0.39496511220932007,
+      "iqm": 0.4038691322008769,
+      "mean": 0.4038691322008769,
+      "median": 0.4020061194896698
+    },
+    "fixed_horizon_iql_h4": {
+      "ci_high": 0.4594500660896301,
+      "ci_low": 0.4001374840736389,
+      "iqm": 0.422995666662852,
+      "mean": 0.422995666662852,
+      "median": 0.40939944982528687
+    },
+    "fixed_horizon_iql_h4_goal_directed": {
+      "ci_high": 0.457497775554657,
+      "ci_low": 0.40743428468704224,
+      "iqm": 0.4255210558573405,
+      "mean": 0.4255210558573405,
+      "median": 0.41163110733032227
+    }
+  },
+  "runs": [
+    {
+      "action_chunk_size": 1,
+      "algorithm": "fixed_horizon_iql_h4",
+      "event": "eval",
+      "label": "fixed_horizon_iql_h4_seed_0",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-large-pointmaze-goal-directed-pilot/fixed_horizon_iql_h4/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "4": 1000
+      },
+      "selected_horizon_mean": 4.0,
+      "suite": "ogbench",
+      "task": "pointmaze-large-stitch-v0",
+      "value": 0.4001374840736389
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "fixed_horizon_iql_h4",
+      "event": "eval",
+      "label": "fixed_horizon_iql_h4_seed_1",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-large-pointmaze-goal-directed-pilot/fixed_horizon_iql_h4/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "4": 1000
+      },
+      "selected_horizon_mean": 4.0,
+      "suite": "ogbench",
+      "task": "pointmaze-large-stitch-v0",
+      "value": 0.40939944982528687
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "fixed_horizon_iql_h4",
+      "event": "eval",
+      "label": "fixed_horizon_iql_h4_seed_2",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-large-pointmaze-goal-directed-pilot/fixed_horizon_iql_h4/seed_2/metrics.jsonl",
+      "seed": 2,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "4": 1000
+      },
+      "selected_horizon_mean": 4.0,
+      "suite": "ogbench",
+      "task": "pointmaze-large-stitch-v0",
+      "value": 0.4594500660896301
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "fixed_horizon_iql_h4",
+      "event": "eval",
+      "label": "fixed_horizon_iql_h4_goal_directed_seed_0",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-large-pointmaze-goal-directed-pilot/fixed_horizon_iql_h4_goal_directed/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "4": 1000
+      },
+      "selected_horizon_mean": 4.0,
+      "suite": "ogbench",
+      "task": "pointmaze-large-stitch-v0",
+      "value": 0.41163110733032227
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "fixed_horizon_iql_h4",
+      "event": "eval",
+      "label": "fixed_horizon_iql_h4_goal_directed_seed_1",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-large-pointmaze-goal-directed-pilot/fixed_horizon_iql_h4_goal_directed/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "4": 1000
+      },
+      "selected_horizon_mean": 4.0,
+      "suite": "ogbench",
+      "task": "pointmaze-large-stitch-v0",
+      "value": 0.40743428468704224
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "fixed_horizon_iql_h4",
+      "event": "eval",
+      "label": "fixed_horizon_iql_h4_goal_directed_seed_2",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-large-pointmaze-goal-directed-pilot/fixed_horizon_iql_h4_goal_directed/seed_2/metrics.jsonl",
+      "seed": 2,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "4": 1000
+      },
+      "selected_horizon_mean": 4.0,
+      "suite": "ogbench",
+      "task": "pointmaze-large-stitch-v0",
+      "value": 0.457497775554657
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_sparse_centered_weighted_seed_0",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-large-pointmaze-goal-directed-pilot/adaptive_iql_sparse_centered_weighted/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "1": 53,
+        "2": 75,
+        "4": 628,
+        "8": 244
+      },
+      "selected_horizon_mean": 4.667,
+      "suite": "ogbench",
+      "task": "pointmaze-large-stitch-v0",
+      "value": 0.410899817943573
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_sparse_centered_weighted_seed_1",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-large-pointmaze-goal-directed-pilot/adaptive_iql_sparse_centered_weighted/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "1": 53,
+        "2": 70,
+        "4": 725,
+        "8": 152
+      },
+      "selected_horizon_mean": 4.309,
+      "suite": "ogbench",
+      "task": "pointmaze-large-stitch-v0",
+      "value": 0.4065191149711609
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_sparse_centered_weighted_seed_2",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-large-pointmaze-goal-directed-pilot/adaptive_iql_sparse_centered_weighted/seed_2/metrics.jsonl",
+      "seed": 2,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "1": 64,
+        "2": 82,
+        "4": 556,
+        "8": 298
+      },
+      "selected_horizon_mean": 4.836,
+      "suite": "ogbench",
+      "task": "pointmaze-large-stitch-v0",
+      "value": 0.4026201069355011
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_sparse_centered_weighted_goal_directed_seed_0",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-large-pointmaze-goal-directed-pilot/adaptive_iql_sparse_centered_weighted_goal_directed/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "1": 53,
+        "2": 75,
+        "4": 628,
+        "8": 244
+      },
+      "selected_horizon_mean": 4.667,
+      "suite": "ogbench",
+      "task": "pointmaze-large-stitch-v0",
+      "value": 0.41463616490364075
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_sparse_centered_weighted_goal_directed_seed_1",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-large-pointmaze-goal-directed-pilot/adaptive_iql_sparse_centered_weighted_goal_directed/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "1": 53,
+        "2": 70,
+        "4": 725,
+        "8": 152
+      },
+      "selected_horizon_mean": 4.309,
+      "suite": "ogbench",
+      "task": "pointmaze-large-stitch-v0",
+      "value": 0.4020061194896698
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_sparse_centered_weighted_goal_directed_seed_2",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-large-pointmaze-goal-directed-pilot/adaptive_iql_sparse_centered_weighted_goal_directed/seed_2/metrics.jsonl",
+      "seed": 2,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "1": 64,
+        "2": 82,
+        "4": 556,
+        "8": 298
+      },
+      "selected_horizon_mean": 4.836,
+      "suite": "ogbench",
+      "task": "pointmaze-large-stitch-v0",
+      "value": 0.39496511220932007
+    }
+  ]
+}

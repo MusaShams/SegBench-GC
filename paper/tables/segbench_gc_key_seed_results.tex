@@ -1,0 +1,19 @@
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{llrrr}
+\toprule
+Study & Optimization seed & Original & CVT & Naive \\
+\midrule
+PointMaze primary & 0 & 32.8 & 33.2 & 19.3 \\
+PointMaze primary & 1 & 58.4 & 42.4 & 18.9 \\
+PointMaze primary & 2 & 60.4 & 41.7 & 18.9 \\
+\midrule
+Puzzle NS & 100001 & 44.0 & 52.4 & 0.4 \\
+Puzzle NS & 200002 & 62.8 & 80.4 & 0.0 \\
+Puzzle NS & 300003 & 34.8 & 42.8 & 0.4 \\
+\bottomrule
+\end{tabular}
+\caption{Seed-level final five-task success (\%). Primary PointMaze CVT and naive entries first average the three segmentation realizations; the Puzzle NS validation uses one fixed segmentation realization.}
+\label{tab:seed-results}
+\end{table}

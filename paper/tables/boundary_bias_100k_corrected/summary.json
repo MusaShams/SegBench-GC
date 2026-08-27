@@ -1,0 +1,141 @@
+{
+  "aggregate": {
+    "naive_minus_original_q": {
+      "max": 18.450183817220022,
+      "mean": 16.015951291927735,
+      "min": 11.555700707411615,
+      "sample_sd": 2.694460806562913
+    },
+    "naive_minus_original_value": {
+      "max": 18.508129829901677,
+      "mean": 15.471484160221735,
+      "min": 10.019400772353723,
+      "sample_sd": 3.1499485957061504
+    },
+    "naive_minus_robust_q": {
+      "max": 19.289615367949516,
+      "mean": 15.842879397122386,
+      "min": 13.70427189143347,
+      "sample_sd": 1.6153025913005108
+    },
+    "naive_minus_robust_value": {
+      "max": 20.5804258455678,
+      "mean": 15.541213872133909,
+      "min": 13.060998362272324,
+      "sample_sd": 2.1326491264654703
+    },
+    "robust_minus_original_q": {
+      "max": 4.745911925786553,
+      "mean": 0.1730718948053466,
+      "min": -4.518347248186738,
+      "sample_sd": 3.62691093166127
+    },
+    "robust_minus_original_value": {
+      "max": 4.997368926647686,
+      "mean": -0.06972971191217199,
+      "min": -5.44434568983477,
+      "sample_sd": 4.1439096204042585
+    }
+  },
+  "pairs": [
+    {
+      "distances": 9,
+      "naive_minus_original_q": 11.698229151639863,
+      "naive_minus_original_value": 10.408404799681874,
+      "naive_minus_robust_q": 16.2165763998266,
+      "naive_minus_robust_value": 15.852750489516646,
+      "opt_seed": 0,
+      "robust_minus_original_q": -4.518347248186738,
+      "robust_minus_original_value": -5.44434568983477,
+      "segmentation_seed": 101
+    },
+    {
+      "distances": 9,
+      "naive_minus_original_q": 15.11521310152989,
+      "naive_minus_original_value": 15.539586365643556,
+      "naive_minus_robust_q": 19.289615367949516,
+      "naive_minus_robust_value": 20.5804258455678,
+      "opt_seed": 0,
+      "robust_minus_original_q": -4.174402266419626,
+      "robust_minus_original_value": -5.040839479924242,
+      "segmentation_seed": 102
+    },
+    {
+      "distances": 9,
+      "naive_minus_original_q": 11.555700707411615,
+      "naive_minus_original_value": 10.019400772353723,
+      "naive_minus_robust_q": 15.636628699570341,
+      "naive_minus_robust_value": 15.03793140906847,
+      "opt_seed": 0,
+      "robust_minus_original_q": -4.080927992158723,
+      "robust_minus_original_value": -5.018530636714747,
+      "segmentation_seed": 103
+    },
+    {
+      "distances": 9,
+      "naive_minus_original_q": 16.84367198198565,
+      "naive_minus_original_value": 16.107917466037623,
+      "naive_minus_robust_q": 16.0637070029547,
+      "naive_minus_robust_value": 15.353342962446144,
+      "opt_seed": 1,
+      "robust_minus_original_q": 0.7799649790309517,
+      "robust_minus_original_value": 0.7545745035914782,
+      "segmentation_seed": 101
+    },
+    {
+      "distances": 9,
+      "naive_minus_original_q": 17.83316204862695,
+      "naive_minus_original_value": 17.655583320669535,
+      "naive_minus_robust_q": 15.65499525587787,
+      "naive_minus_robust_value": 15.183768996984226,
+      "opt_seed": 1,
+      "robust_minus_original_q": 2.1781667927490798,
+      "robust_minus_original_value": 2.4718143236853094,
+      "segmentation_seed": 102
+    },
+    {
+      "distances": 9,
+      "naive_minus_original_q": 17.96507692277746,
+      "naive_minus_original_value": 17.436878296453305,
+      "naive_minus_robust_q": 13.928866434332278,
+      "naive_minus_robust_value": 13.060998362272324,
+      "opt_seed": 1,
+      "robust_minus_original_q": 4.03621048844518,
+      "robust_minus_original_value": 4.37587993418098,
+      "segmentation_seed": 103
+    },
+    {
+      "distances": 9,
+      "naive_minus_original_q": 18.20970714160272,
+      "naive_minus_original_value": 17.858318585878063,
+      "naive_minus_robust_q": 15.593921057824474,
+      "naive_minus_robust_value": 15.343378335694256,
+      "opt_seed": 2,
+      "robust_minus_original_q": 2.615786083778246,
+      "robust_minus_original_value": 2.5149402501838063,
+      "segmentation_seed": 101
+    },
+    {
+      "distances": 9,
+      "naive_minus_original_q": 18.450183817220022,
+      "naive_minus_original_value": 18.508129829901677,
+      "naive_minus_robust_q": 13.70427189143347,
+      "naive_minus_robust_value": 13.510760903253988,
+      "opt_seed": 2,
+      "robust_minus_original_q": 4.745911925786553,
+      "robust_minus_original_value": 4.997368926647686,
+      "segmentation_seed": 102
+    },
+    {
+      "distances": 9,
+      "naive_minus_original_q": 16.472616754555425,
+      "naive_minus_original_value": 15.709138005376268,
+      "naive_minus_robust_q": 16.497332464332228,
+      "naive_minus_robust_value": 15.947567544401316,
+      "opt_seed": 2,
+      "robust_minus_original_q": -0.024715709776803547,
+      "robust_minus_original_value": -0.23842953902504782,
+      "segmentation_seed": 103
+    }
+  ]
+}

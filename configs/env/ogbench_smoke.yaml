@@ -1,0 +1,5 @@
+suite: ogbench
+task: pointmaze-medium-stitch-v0
+dataset: default
+observation_mode: state
+

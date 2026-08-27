@@ -1,0 +1,20 @@
+algorithm: fixed_horizon_iql_h1
+horizons: [1]
+chunk_size: 1
+batch_size: 32
+learning_rate: 0.001
+gate_learning_rate: 0.001
+hidden_dim: 64
+gate_hidden_dim: 16
+discount: 0.99
+expectile: 0.7
+advantage_temperature: 3.0
+advantage_clip: 100.0
+target_tau: 0.005
+uncertainty_penalty: 0.0
+horizon_value_mode: cumulative
+horizon_penalty: 0.0
+gate_target_smoothing: 0.0
+gate_entropy_regularization: 0.0
+gate_selection_strategy: argmax
+

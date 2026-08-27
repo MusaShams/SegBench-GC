@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use SegBench-GC, please cite the paper and repository using the metadata below."
+title: "SegBench-GC: Testing Segmentation Invariance in Multi-Step Offline Goal-Conditioned Reinforcement Learning"
+authors:
+  - family-names: "Shams"
+    given-names: "Musa"
+year: 2026
+url: "https://github.com/MusaShams/SegBench-GC"
+repository-code: "https://github.com/MusaShams/SegBench-GC"
+keywords:
+  - offline reinforcement learning
+  - goal-conditioned reinforcement learning
+  - segmentation invariance
+  - truncation
+  - reliability
+  - benchmark
+license: MIT

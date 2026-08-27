@@ -1,0 +1,5 @@
+label,algorithm,suite,task,seed,action_chunk_size,event,metric,value,selected_horizon_mean,selected_horizon_count,path
+gciql_official_matched_seed_0,iql,ogbench,pointmaze-medium-stitch-v0,0,1,eval,eval_action_mse,1.3283793926239014,,0,runs/official-matched-pytorch-pilot/gciql_official_matched/seed_0/metrics.jsonl
+gciql_official_matched_seed_1,iql,ogbench,pointmaze-medium-stitch-v0,1,1,eval,eval_action_mse,1.2479335069656372,,0,runs/official-matched-pytorch-pilot/gciql_official_matched/seed_1/metrics.jsonl
+adaptive_iql_official_matched_seed_0,adaptive_iql,ogbench,pointmaze-medium-stitch-v0,0,1,eval,eval_action_mse,1.2129454612731934,2.630322265625,200,runs/official-matched-pytorch-pilot/adaptive_iql_official_matched/seed_0/metrics.jsonl
+adaptive_iql_official_matched_seed_1,adaptive_iql,ogbench,pointmaze-medium-stitch-v0,1,1,eval,eval_action_mse,1.0513916015625,2.6105419921875,200,runs/official-matched-pytorch-pilot/adaptive_iql_official_matched/seed_1/metrics.jsonl

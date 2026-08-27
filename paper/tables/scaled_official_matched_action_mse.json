@@ -1,0 +1,162 @@
+{
+  "aggregate": {
+    "ci_high": 1.4960892498493195,
+    "ci_low": 1.2511101961135864,
+    "iqm": 1.3748932182788849,
+    "mean": 1.374030888080597,
+    "median": 1.3647162914276123
+  },
+  "by_algorithm": {
+    "adaptive_iql": {
+      "ci_high": 1.5526378154754639,
+      "ci_low": 1.1919746398925781,
+      "iqm": 1.3445854187011719,
+      "mean": 1.3445854187011719,
+      "median": 1.2891438007354736
+    },
+    "iql": {
+      "ci_high": 1.4809964895248413,
+      "ci_low": 1.3313477039337158,
+      "iqm": 1.403476357460022,
+      "mean": 1.403476357460022,
+      "median": 1.3980848789215088
+    }
+  },
+  "by_algorithm_chunk": {
+    "adaptive_iql_chunk_1": {
+      "ci_high": 1.5526378154754639,
+      "ci_low": 1.1919746398925781,
+      "iqm": 1.3445854187011719,
+      "mean": 1.3445854187011719,
+      "median": 1.2891438007354736
+    },
+    "iql_chunk_1": {
+      "ci_high": 1.4809964895248413,
+      "ci_low": 1.3313477039337158,
+      "iqm": 1.403476357460022,
+      "mean": 1.403476357460022,
+      "median": 1.3980848789215088
+    }
+  },
+  "by_label_group": {
+    "adaptive_iql_official_matched": {
+      "ci_high": 1.5526378154754639,
+      "ci_low": 1.1919746398925781,
+      "iqm": 1.3445854187011719,
+      "mean": 1.3445854187011719,
+      "median": 1.2891438007354736
+    },
+    "gciql_official_matched": {
+      "ci_high": 1.4809964895248413,
+      "ci_low": 1.3313477039337158,
+      "iqm": 1.403476357460022,
+      "mean": 1.403476357460022,
+      "median": 1.3980848789215088
+    }
+  },
+  "runs": [
+    {
+      "action_chunk_size": 1,
+      "algorithm": "iql",
+      "event": "eval",
+      "label": "gciql_official_matched_seed_0",
+      "metric": "eval_action_mse",
+      "path": "runs/scaled-official-matched-pilot/gciql_official_matched/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 0,
+      "selected_horizon_histogram": {},
+      "selected_horizon_mean": null,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 1.4809964895248413
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "iql",
+      "event": "eval",
+      "label": "gciql_official_matched_seed_1",
+      "metric": "eval_action_mse",
+      "path": "runs/scaled-official-matched-pilot/gciql_official_matched/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 0,
+      "selected_horizon_histogram": {},
+      "selected_horizon_mean": null,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 1.3980848789215088
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "iql",
+      "event": "eval",
+      "label": "gciql_official_matched_seed_2",
+      "metric": "eval_action_mse",
+      "path": "runs/scaled-official-matched-pilot/gciql_official_matched/seed_2/metrics.jsonl",
+      "seed": 2,
+      "selected_horizon_count": 0,
+      "selected_horizon_histogram": {},
+      "selected_horizon_mean": null,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 1.3313477039337158
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_official_matched_seed_0",
+      "metric": "eval_action_mse",
+      "path": "runs/scaled-official-matched-pilot/adaptive_iql_official_matched/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "3": 797,
+        "4": 181,
+        "5": 22
+      },
+      "selected_horizon_mean": 3.996388671875,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 1.1919746398925781
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_official_matched_seed_1",
+      "metric": "eval_action_mse",
+      "path": "runs/scaled-official-matched-pilot/adaptive_iql_official_matched/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "3": 723,
+        "4": 135,
+        "5": 105,
+        "6": 37
+      },
+      "selected_horizon_mean": 4.2149384765625,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 1.5526378154754639
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_official_matched_seed_2",
+      "metric": "eval_action_mse",
+      "path": "runs/scaled-official-matched-pilot/adaptive_iql_official_matched/seed_2/metrics.jsonl",
+      "seed": 2,
+      "selected_horizon_count": 1000,
+      "selected_horizon_histogram": {
+        "3": 755,
+        "4": 168,
+        "5": 77
+      },
+      "selected_horizon_mean": 4.099970703125,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 1.2891438007354736
+    }
+  ]
+}

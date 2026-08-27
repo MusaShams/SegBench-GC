@@ -1,0 +1,7 @@
+suite: ogbench
+task: pointmaze-large-stitch-v0
+dataset: default
+observation_mode: state
+goal_reward_mode: sparse_success
+success_threshold: 1.0
+

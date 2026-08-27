@@ -1,0 +1,41 @@
+\section{Results}
+
+\begin{table}[t]
+  \centering
+  \caption{Final five-task success (\%, mean $\pm$ sample SD over optimization seeds). In the primary study, the three segmentation realizations are averaged within each optimization seed before aggregation. The independent NS validation uses one fixed segmentation realization. The final column reports the paired CVT-minus-naive difference.}
+  \label{tab:main-results}
+  \input{tables/segbench_gc_main}
+\end{table}
+
+\subsection{Artificial terminalization substantially degrades the primary learner}
+
+In the matched-count PointMaze study, the uncut Original condition reaches $50.5\pm15.4$\% success. CVT reaches $39.1\pm5.1$\%, while treating only the same 35,000 artificial cuts as absorbing lowers success to $19.1\pm0.2$\%. The paired CVT-minus-naive difference is $20.0\pm5.4$ percentage points. This degradation occurs despite identical source-boundary semantics, transitions, goals, architecture, and optimization settings.
+
+CVT is not perfectly invariant. Relative to the uncut control, its mean segmentation gap is 11.4 percentage points, its worst observed segmentation drop is 15.1 points, and the descriptive sample SD across the three segmentation means is 3.4 points. Under naive artificial-terminal handling, the corresponding values are a 31.5-point mean gap, a 45.7-point worst drop, and 13.6-point segmentation dispersion. CVT retains 77.4\% of the uncut mean at this training budget. We therefore treat CVT as the segmentation-consistent control rather than as evidence that all residual segmentation effects disappear in finite-sample learning.
+
+\subsection{The arbitrary segmentation realization materially changes naive performance}
+
+The three segmentation realizations produce CVT means of 39.6\%, 42.3\%, and 35.5\% after averaging optimization seeds. Under naive artificial-terminal handling, the corresponding means are 20.5\%, 31.9\%, and 4.8\%. At the individual optimization/segmentation-run level, naive success ranges from 0\% to 37.6\%.
+
+This dispersion is central to the benchmark: no transition or source trajectory changes across these segmentation draws. The learner changes only because different nonterminal locations are declared to be artificial backup boundaries. A method that is insensitive to administrative segmentation should not exhibit this scale of performance variation from that metadata choice alone.
+
+\subsection{The target-level mechanism is exact and produces learned critic optimism}
+
+The direct target diagnostic evaluates 131,072 horizon-specific target slots from 32,768 sampled replay starts. Artificial cuts affect 12,585 of those slots. On the affected slots, the numerical residual of
+\begin{equation}
+  y_{\mathrm{naive}}-y_{\mathrm{CVT}}
+  =-\gamma^kV(s_{t+k},g)
+\end{equation}
+is at most $3.8\times10^{-6}$. The naive target is shifted upward on 99.8\% of affected slots, with a mean shift of 39.26. Because both targets use the same sampled transitions and the same trained CVT value function, this diagnostic checks the isolated target construction rather than comparing separately trained critics.
+
+The learned-critic diagnostic shows the same mechanism after training. Averaged over distances zero through eight from artificial cuts and then over all nine optimization/segmentation pairs, naive-minus-CVT value predictions are $+15.54\pm2.13$ and naive-minus-CVT Q predictions are $+15.84\pm1.62$. By contrast, CVT-minus-Original is $-0.07\pm4.14$ for value and $+0.17\pm3.63$ for Q. Artificial-terminal targets therefore induce a broad optimistic value shift, whereas the CVT critic remains approximately centered on the uncut critic in aggregate.
+
+\subsection{A published $n$-step baseline independently reproduces the failure}
+
+The published NS ($n=25$) baseline from the Decoupled Q-Chunking codebase \cite{li2026dqc} reproduces the same qualitative failure outside our horizon-indexed implementation. Final Puzzle-4x5 success is $47.2\pm14.3$\% uncut, $58.5\pm19.5$\% with CVT, and $0.27\pm0.23$\% with naive artificial-terminal handling. The paired CVT-minus-naive difference is $58.3\pm19.8$ percentage points; the three per-seed gaps are 52.0, 80.4, and 42.4 points.
+
+CVT also exceeds the uncut control by 11.3 points on average in these three runs, but we do not interpret that as a general improvement claim. The relevant controlled contrast is that the same fixed artificial segmentation retains substantial task success under continuation-valid targets and nearly eliminates goal-reaching behavior when those cuts are made absorbing.
+
+\subsection{Negative control}
+
+One-step GCIQL is invariant by construction because it does not consume the multi-step backup-boundary metadata. An exact paired replay check confirms that artificial resegmentation leaves its sampled observations, goals, rewards, and masks unchanged. This negative control supports localization of the observed failure to multi-step target construction.

@@ -1,0 +1,5 @@
+\section{Conclusion}
+
+SegBench-GC treats trajectory segmentation as an explicit reliability intervention rather than inert dataset metadata. Making artificial nonterminal cuts absorbing substantially reduces performance and makes the primary learner sensitive to the arbitrary segmentation realization. Target- and critic-level diagnostics connect that behavioral degradation to optimistic pseudo-terminal targets, and a separate published $n$-step implementation reproduces the same failure pattern outside our primary learner.
+
+The broader implication is methodological: multi-step offline RL should make boundary semantics explicit and should test sensitivity to benign resegmentation when sequence boundaries enter target construction. CVT is the continuation-consistent control for that test. SegBench-GC contributes a controlled protocol for isolating and measuring this failure mode.

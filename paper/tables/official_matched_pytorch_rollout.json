@@ -1,0 +1,126 @@
+{
+  "aggregate": {
+    "ci_high": 0.0,
+    "ci_low": 0.0,
+    "iqm": 0.0,
+    "mean": 0.0,
+    "median": 0.0
+  },
+  "by_algorithm": {
+    "adaptive_iql": {
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "iqm": 0.0,
+      "mean": 0.0,
+      "median": 0.0
+    },
+    "iql": {
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "iqm": 0.0,
+      "mean": 0.0,
+      "median": 0.0
+    }
+  },
+  "by_algorithm_chunk": {
+    "adaptive_iql_chunk_1": {
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "iqm": 0.0,
+      "mean": 0.0,
+      "median": 0.0
+    },
+    "iql_chunk_1": {
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "iqm": 0.0,
+      "mean": 0.0,
+      "median": 0.0
+    }
+  },
+  "by_label_group": {
+    "adaptive_iql_official_matched": {
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "iqm": 0.0,
+      "mean": 0.0,
+      "median": 0.0
+    },
+    "gciql_official_matched": {
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "iqm": 0.0,
+      "mean": 0.0,
+      "median": 0.0
+    }
+  },
+  "runs": [
+    {
+      "action_chunk_size": 1,
+      "algorithm": "iql",
+      "event": "rollout_eval",
+      "label": "gciql_official_matched_seed_0",
+      "metric": "rollout_success_rate",
+      "path": "runs/official-matched-pytorch-pilot/gciql_official_matched/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 0,
+      "selected_horizon_histogram": {},
+      "selected_horizon_mean": null,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.0
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "iql",
+      "event": "rollout_eval",
+      "label": "gciql_official_matched_seed_1",
+      "metric": "rollout_success_rate",
+      "path": "runs/official-matched-pytorch-pilot/gciql_official_matched/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 0,
+      "selected_horizon_histogram": {},
+      "selected_horizon_mean": null,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.0
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "rollout_eval",
+      "label": "adaptive_iql_official_matched_seed_0",
+      "metric": "rollout_success_rate",
+      "path": "runs/official-matched-pytorch-pilot/adaptive_iql_official_matched/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 200,
+      "selected_horizon_histogram": {
+        "1": 10,
+        "2": 126,
+        "3": 64
+      },
+      "selected_horizon_mean": 2.630322265625,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.0
+    },
+    {
+      "action_chunk_size": 1,
+      "algorithm": "adaptive_iql",
+      "event": "rollout_eval",
+      "label": "adaptive_iql_official_matched_seed_1",
+      "metric": "rollout_success_rate",
+      "path": "runs/official-matched-pytorch-pilot/adaptive_iql_official_matched/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 200,
+      "selected_horizon_histogram": {
+        "2": 156,
+        "3": 44
+      },
+      "selected_horizon_mean": 2.6105419921875,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.0
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+seed,mode,success_rate,task_1_success_rate,task_2_success_rate,task_3_success_rate,task_4_success_rate,task_5_success_rate
+0,learned_gate,0.64,1.0,1.0,0.2,0.0,1.0
+0,static_mixture,0.76,1.0,1.0,0.8,0.0,1.0
+0,forced_h8,0.72,1.0,1.0,0.6,0.0,1.0
+1,learned_gate,0.64,1.0,1.0,0.4,0.0,0.8
+1,static_mixture,0.72,1.0,1.0,0.8,0.0,0.8
+1,forced_h8,0.64,1.0,1.0,0.4,0.0,0.8
+2,learned_gate,0.6,1.0,0.6,0.4,0.0,1.0
+2,static_mixture,0.64,1.0,0.8,0.4,0.0,1.0
+2,forced_h8,0.48,1.0,0.4,0.2,0.0,0.8
+3,learned_gate,0.72,1.0,0.8,0.8,0.0,1.0
+3,static_mixture,0.56,1.0,0.8,0.2,0.0,0.8
+3,forced_h8,0.52,1.0,0.4,0.4,0.0,0.8
+4,learned_gate,0.6,1.0,1.0,0.8,0.0,0.2
+4,static_mixture,0.6,1.0,1.0,0.6,0.0,0.4
+4,forced_h8,0.56,1.0,1.0,0.6,0.0,0.2

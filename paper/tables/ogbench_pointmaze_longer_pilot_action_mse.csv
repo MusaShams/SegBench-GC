@@ -1,0 +1,7 @@
+label,algorithm,suite,task,seed,action_chunk_size,event,metric,value,selected_horizon_mean,selected_horizon_count,path
+fixed_horizon_iql_h4_seed_0,fixed_horizon_iql_h4,ogbench,pointmaze-medium-stitch-v0,0,1,eval,eval_action_mse,0.3873124420642853,4.0,1000,runs/ogbench-pointmaze-longer-pilot/fixed_horizon_iql_h4/seed_0/metrics.jsonl
+fixed_horizon_iql_h4_seed_1,fixed_horizon_iql_h4,ogbench,pointmaze-medium-stitch-v0,1,1,eval,eval_action_mse,0.3934590816497803,4.0,1000,runs/ogbench-pointmaze-longer-pilot/fixed_horizon_iql_h4/seed_1/metrics.jsonl
+fixed_horizon_iql_h4_seed_2,fixed_horizon_iql_h4,ogbench,pointmaze-medium-stitch-v0,2,1,eval,eval_action_mse,0.3938838243484497,4.0,1000,runs/ogbench-pointmaze-longer-pilot/fixed_horizon_iql_h4/seed_2/metrics.jsonl
+adaptive_iql_sparse_centered_weighted_seed_0,adaptive_iql,ogbench,pointmaze-medium-stitch-v0,0,1,eval,eval_action_mse,0.3765103220939636,5.043,1000,runs/ogbench-pointmaze-longer-pilot/adaptive_iql_sparse_centered_weighted/seed_0/metrics.jsonl
+adaptive_iql_sparse_centered_weighted_seed_1,adaptive_iql,ogbench,pointmaze-medium-stitch-v0,1,1,eval,eval_action_mse,0.3933233320713043,4.967,1000,runs/ogbench-pointmaze-longer-pilot/adaptive_iql_sparse_centered_weighted/seed_1/metrics.jsonl
+adaptive_iql_sparse_centered_weighted_seed_2,adaptive_iql,ogbench,pointmaze-medium-stitch-v0,2,1,eval,eval_action_mse,0.4042210578918457,5.382,1000,runs/ogbench-pointmaze-longer-pilot/adaptive_iql_sparse_centered_weighted/seed_2/metrics.jsonl

@@ -1,0 +1,5 @@
+algorithm: behavioral_cloning
+batch_size: 32
+learning_rate: 0.05
+l2_regularization: 0.0001
+

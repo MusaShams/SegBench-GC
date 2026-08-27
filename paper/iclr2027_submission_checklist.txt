@@ -1,0 +1,69 @@
+ICLR 2027 submission checklist
+==============================
+
+Deadlines (Anywhere on Earth)
+----------------------------
+
+Abstract: September 18, 2026, 11:59 PM AOE
+Paper:    September 25, 2026, 11:59 PM AOE
+Portal:   https://openreview.net/group?id=ICLR.cc/2027/Conference
+
+Before the abstract deadline
+----------------------------
+
+[ ] Create or update an OpenReview profile for every author.
+[ ] Use institutional email addresses where available; profile moderation
+    without one can take up to two weeks.
+[ ] Finalize the complete author list. No authors may be added after the
+    abstract deadline.
+[ ] Submit a genuine title and abstract suitable for reviewer bidding.
+[ ] Suggested subject areas: reinforcement learning; datasets and benchmarks.
+[ ] Suggested keywords: offline reinforcement learning; goal-conditioned
+    reinforcement learning; dataset segmentation; truncation; reliability.
+[ ] Confirm the submission quota and reciprocal-review eligibility shown on
+    each author's OpenReview profile.
+
+Before the paper deadline
+-------------------------
+
+[ ] Upload paper/main.pdf.
+[ ] Upload dist/segbench-gc-anonymous.zip as supplementary code.
+[ ] Keep the paper anonymous and leave \iclrfinalcopy commented out.
+[ ] Confirm main text ends by page 9.
+[ ] Confirm the appendix follows the references.
+[ ] Copy the paper's AI-use disclosure into the submission form consistently.
+[ ] Read and acknowledge the ICLR Code of Ethics and Code of Conduct.
+[ ] Confirm the paper is not under review at another archival venue.
+[ ] Verify all author profiles and author order; no author changes are allowed
+    after the paper deadline.
+[ ] Run:
+      bash scripts/compile_paper.sh
+      .venv/bin/python scripts/check_iclr_submission.py
+      .venv/bin/python -m pytest -q
+      .venv/bin/python scripts/build_anonymous_supplement.py
+
+Final package hashes
+--------------------
+
+paper/main.pdf
+  4beaf82a70c3efd968b593799a13d67a117a80d681e60a1d446ca822fe38f3f3
+
+dist/segbench-gc-anonymous.zip
+  4db187bb8658adae9583aa3b500ec3ca56220e64dacf33080d8793e4ec6bcff9
+
+Reference arXiv artifacts
+-------------------------
+
+paper/arxiv.pdf
+  301b7995a890887929297af93a77b403d9dfc01ab11bee267bd0fa08410c1283
+
+dist/segbench-gc-arxiv-source.zip
+  f5a1fdf4a210a26d35dba602d98a3180e2f867b4c74c934d405f5a75e326d8e1
+
+After abstract submission
+-------------------------
+
+[ ] Follow ICLR/OpenReview instructions for reviewer registration. ICLR states
+    that submissions with no author registered as a reviewer can be desk
+    rejected; first-time-author exemptions and quotas depend on profile data.
+[ ] Monitor program-chair policy updates and OpenReview messages.

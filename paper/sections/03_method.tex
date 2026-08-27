@@ -1,0 +1,52 @@
+\section{Method}
+
+Let $\mathcal{D}$ contain ordered transitions $(s_t,a_t,s_{t+1})$ and source-trajectory boundaries $\tau_t$. Source boundaries constrain future-goal sampling and describe how the logged stream was collected. In OGBench, task completion is represented separately by a Bellman mask. SegBench-GC introduces a second object, an artificial backup-boundary set $b$, that truncates a multi-step return without changing any transition tuple or source-trajectory boundary.
+
+\subsection{Controlled resegmentation}
+
+Artificial cuts are inserted only at eligible nonterminal locations with a valid stored successor. Source trajectories $\tau$ remain fixed and continue to define future-goal sampling, so two runs that differ only in $b$ see the same underlying transitions and goal-sampling semantics. The Original control ignores artificial cuts entirely. In the segmented conditions, reward accumulation stops when a cut is encountered; CVT and naive handling differ only in whether continuation value is retained at that same cut. In the primary matched-count experiment we sample an exact number of artificial cuts with a seeded procedure; in the independent validation we match the same cut density. This design isolates backup-boundary semantics from changes in data content, future-goal support, or evaluation.
+
+\subsection{Continuation-valid targets}
+
+For a requested backup horizon $h$, let $k\leq h$ be the number of valid steps before goal completion or the first artificial backup cut. At an artificial cut whose stored successor belongs to the same continuing process, CVT uses
+\begin{equation}
+  y_{\mathrm{CVT}}^{(h)}
+  =
+  \sum_{i=0}^{k-1}\gamma^i r_{t+i}
+  + \gamma^k V^{(h)}(s_{t+k},g).
+\end{equation}
+The naive artificial-terminal control uses the \emph{same cut} but sets only that artificial-cut continuation to zero:
+\begin{equation}
+  y_{\mathrm{naive}}^{(h)}
+  =
+  \sum_{i=0}^{k-1}\gamma^i r_{t+i}.
+\end{equation}
+Source-trajectory boundaries are continuation-valid in both conditions, and genuine goal completion disables bootstrap in both conditions. Thus the CVT-versus-naive intervention is isolated to artificial cuts. At any affected artificial cut,
+\begin{equation}
+  y_{\mathrm{naive}}^{(h)}-y_{\mathrm{CVT}}^{(h)}
+  =-\gamma^k V^{(h)}(s_{t+k},g).
+\end{equation}
+For the negative goal reward used by the primary learner, continuing values are almost always non-positive, so dropping the continuation term shifts the naive target upward. Administrative cuts can therefore become optimistic pseudo-terminals even though the underlying process continues.
+
+CVT is not a new Bellman rule. It is the continuation-consistent control obtained by applying standard nonterminal truncation semantics at an artificial boundary whose successor is known to be valid \cite{pardo2018timelimits}. Under a continuing fixed-point interpretation, Bellman expansion makes the cut target agree with the corresponding uncut target at consistency. An explicitly finite-horizon value would instead require a residual-horizon quantity such as $V^{(h-k)}$.
+
+\subsection{Segmentation invariance}
+
+For algorithm $A$, fixed dataset transitions $\mathcal{D}$, and artificial segmentation $b$, let $J_A(b)$ denote rollout performance of the learned policy. Let $b_0$ be the uncut condition and let $\mathcal{B}$ be a set of artificial segmentations. We summarize sensitivity with
+\begin{align}
+  \mathrm{SegGap}(A)
+  &=J_A(b_0)-\frac{1}{|\mathcal{B}|}\sum_{b\in\mathcal{B}}J_A(b),\\
+  \mathrm{WorstDrop}(A)
+  &=J_A(b_0)-\min_{b\in\mathcal{B}}J_A(b),\\
+  \mathrm{SegDisp}(A)
+  &=\operatorname{Std}_{b\in\mathcal{B}}\left[J_A(b)\right].
+\end{align}
+When multiple segmentations are evaluated for one optimization seed, we first aggregate over segmentations within that seed and then aggregate across optimization seeds. This avoids treating segmentation realizations as independent training replicates.
+
+\subsection{Test subjects and goal protocol}
+
+Our primary test subject is a goal-conditioned IQL-style learner with twin horizon-indexed critics and value heads for $\{1,2,4,8\}$ \cite{kostrikov2022iql}. The actor uses a fixed soft mixture of horizon-conditioned primitive-action heads. Because these heads are trained from multi-step targets, their learning signal depends on backup-boundary semantics. One-step GCIQL is an exact negative control: when multi-step horizon targets are disabled, artificial backup-boundary metadata is not consumed and paired replay samples are identical under resegmentation.
+
+For cross-implementation validation, we use the published NS baseline from the Decoupled Q-Chunking codebase \cite{li2026dqc}, configured with policy chunk size one, backup horizon $25$, and no chunk critic. This is a conventional multi-step $n$-step learner rather than our horizon-indexed implementation, providing a separate test of whether the failure is implementation-specific.
+
+Primary PointMaze goals follow the official OGBench protocol \cite{ogbench2024}. Value goals mix current, future-trajectory, and random states with probabilities $0.2/0.5/0.3$; actor goals mix future and random states with probabilities $0.5/0.5$. Goal completion receives reward zero and disables bootstrap regardless of segmentation.

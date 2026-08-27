@@ -1,0 +1,11 @@
+seed: 0
+steps: 100
+eval_episodes: 5
+eval_batch_size: 4096
+rollout_episodes: 2
+rollout_max_steps: 100
+save_checkpoint: true
+log_interval: 10
+output_dir: runs/ogbench-pointmaze-smoke
+tfvc_collection: https://dev.azure.com/bruhmoment123/
+tfvc_workspace: MacTFVC

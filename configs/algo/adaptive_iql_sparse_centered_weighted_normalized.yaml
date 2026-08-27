@@ -1,0 +1,24 @@
+algorithm: adaptive_iql
+horizons: [1, 2, 4, 8]
+chunk_size: 4
+batch_size: 32
+learning_rate: 0.001
+gate_learning_rate: 0.001
+hidden_dim: 64
+gate_hidden_dim: 32
+discount: 0.99
+expectile: 0.7
+advantage_temperature: 3.0
+advantage_clip: 100.0
+target_tau: 0.005
+uncertainty_penalty: 0.25
+horizon_value_mode: sqrt_horizon
+horizon_penalty: 0.0
+horizon_prior_center: 4
+horizon_prior_penalty: 0.5
+gate_target_smoothing: 0.2
+gate_entropy_regularization: 0.01
+gate_selection_strategy: sample
+actor_horizon_weighting: gate
+normalize_inputs: true
+

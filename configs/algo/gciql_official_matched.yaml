@@ -1,0 +1,13 @@
+algorithm: iql
+batch_size: 1024
+learning_rate: 0.0003
+hidden_dim: 512
+hidden_layers: 3
+activation: gelu
+layer_norm: true
+discount: 0.99
+expectile: 0.9
+actor_loss_mode: ddpgbc
+actor_alpha: 0.003
+target_tau: 0.005
+

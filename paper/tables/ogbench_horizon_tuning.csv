@@ -1,0 +1,7 @@
+label,mode,penalty,seed,eval_action_mse,rollout_success_rate,selected_horizon_mean,target_horizon_mean,metrics_path
+sqrt_horizon_penalty_0p0_seed_0,sqrt_horizon,0.0,0,0.4226607084274292,0.0,5.635,6.755,runs/ogbench-horizon-tuning/sqrt_horizon_penalty_0p0_seed_0/metrics.jsonl
+sqrt_horizon_penalty_0p25_seed_0,sqrt_horizon,0.25,0,0.4223330318927765,0.0,5.025,6.52,runs/ogbench-horizon-tuning/sqrt_horizon_penalty_0p25_seed_0/metrics.jsonl
+sqrt_horizon_penalty_0p5_seed_0,sqrt_horizon,0.5,0,0.4236258268356323,0.0,4.68,6.32,runs/ogbench-horizon-tuning/sqrt_horizon_penalty_0p5_seed_0/metrics.jsonl
+sqrt_horizon_penalty_0p65_seed_0,sqrt_horizon,0.65,0,0.42672422528266907,0.0,1.0,1.38,runs/ogbench-horizon-tuning/sqrt_horizon_penalty_0p65_seed_0/metrics.jsonl
+sqrt_horizon_penalty_0p85_seed_0,sqrt_horizon,0.85,0,0.42672422528266907,0.0,1.0,1.075,runs/ogbench-horizon-tuning/sqrt_horizon_penalty_0p85_seed_0/metrics.jsonl
+sqrt_horizon_penalty_1p0_seed_0,sqrt_horizon,1.0,0,0.42672422528266907,0.0,1.0,1.06,runs/ogbench-horizon-tuning/sqrt_horizon_penalty_1p0_seed_0/metrics.jsonl

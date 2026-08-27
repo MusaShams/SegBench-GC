@@ -1,0 +1,11 @@
+seed: 0
+steps: 1000000
+log_interval: 5000
+checkpoint_interval: 100000
+eval_batch_size: 4096
+rollout_episodes: 50
+rollout_max_steps: 1000
+save_checkpoint: true
+output_dir: runs/full
+tfvc_collection: https://dev.azure.com/bruhmoment123/
+tfvc_workspace: MacTFVC

@@ -1,0 +1,150 @@
+{
+  "by_setting": [
+    {
+      "eval_action_mse_mean": 0.4226607084274292,
+      "mode": "sqrt_horizon",
+      "penalty": 0.0,
+      "rollout_success_rate_mean": 0.0,
+      "runs": 1,
+      "selected_horizon_mean": 5.635,
+      "target_horizon_mean": 6.755
+    },
+    {
+      "eval_action_mse_mean": 0.4223330318927765,
+      "mode": "sqrt_horizon",
+      "penalty": 0.25,
+      "rollout_success_rate_mean": 0.0,
+      "runs": 1,
+      "selected_horizon_mean": 5.025,
+      "target_horizon_mean": 6.52
+    },
+    {
+      "eval_action_mse_mean": 0.4236258268356323,
+      "mode": "sqrt_horizon",
+      "penalty": 0.5,
+      "rollout_success_rate_mean": 0.0,
+      "runs": 1,
+      "selected_horizon_mean": 4.68,
+      "target_horizon_mean": 6.32
+    },
+    {
+      "eval_action_mse_mean": 0.42672422528266907,
+      "mode": "sqrt_horizon",
+      "penalty": 0.65,
+      "rollout_success_rate_mean": 0.0,
+      "runs": 1,
+      "selected_horizon_mean": 1.0,
+      "target_horizon_mean": 1.38
+    },
+    {
+      "eval_action_mse_mean": 0.42672422528266907,
+      "mode": "sqrt_horizon",
+      "penalty": 0.85,
+      "rollout_success_rate_mean": 0.0,
+      "runs": 1,
+      "selected_horizon_mean": 1.0,
+      "target_horizon_mean": 1.075
+    },
+    {
+      "eval_action_mse_mean": 0.42672422528266907,
+      "mode": "sqrt_horizon",
+      "penalty": 1.0,
+      "rollout_success_rate_mean": 0.0,
+      "runs": 1,
+      "selected_horizon_mean": 1.0,
+      "target_horizon_mean": 1.06
+    }
+  ],
+  "runs": [
+    {
+      "eval_action_mse": 0.4226607084274292,
+      "label": "sqrt_horizon_penalty_0p0_seed_0",
+      "metrics_path": "runs/ogbench-horizon-tuning/sqrt_horizon_penalty_0p0_seed_0/metrics.jsonl",
+      "mode": "sqrt_horizon",
+      "penalty": 0.0,
+      "rollout_success_rate": 0.0,
+      "seed": 0,
+      "selected_horizon_histogram": {
+        "1": 43,
+        "4": 43,
+        "8": 114
+      },
+      "selected_horizon_mean": 5.635,
+      "target_horizon_mean": 6.755
+    },
+    {
+      "eval_action_mse": 0.4223330318927765,
+      "label": "sqrt_horizon_penalty_0p25_seed_0",
+      "metrics_path": "runs/ogbench-horizon-tuning/sqrt_horizon_penalty_0p25_seed_0/metrics.jsonl",
+      "mode": "sqrt_horizon",
+      "penalty": 0.25,
+      "rollout_success_rate": 0.0,
+      "seed": 0,
+      "selected_horizon_histogram": {
+        "1": 81,
+        "4": 7,
+        "8": 112
+      },
+      "selected_horizon_mean": 5.025,
+      "target_horizon_mean": 6.52
+    },
+    {
+      "eval_action_mse": 0.4236258268356323,
+      "label": "sqrt_horizon_penalty_0p5_seed_0",
+      "metrics_path": "runs/ogbench-horizon-tuning/sqrt_horizon_penalty_0p5_seed_0/metrics.jsonl",
+      "mode": "sqrt_horizon",
+      "penalty": 0.5,
+      "rollout_success_rate": 0.0,
+      "seed": 0,
+      "selected_horizon_histogram": {
+        "1": 92,
+        "4": 5,
+        "8": 103
+      },
+      "selected_horizon_mean": 4.68,
+      "target_horizon_mean": 6.32
+    },
+    {
+      "eval_action_mse": 0.42672422528266907,
+      "label": "sqrt_horizon_penalty_0p65_seed_0",
+      "metrics_path": "runs/ogbench-horizon-tuning/sqrt_horizon_penalty_0p65_seed_0/metrics.jsonl",
+      "mode": "sqrt_horizon",
+      "penalty": 0.65,
+      "rollout_success_rate": 0.0,
+      "seed": 0,
+      "selected_horizon_histogram": {
+        "1": 200
+      },
+      "selected_horizon_mean": 1.0,
+      "target_horizon_mean": 1.38
+    },
+    {
+      "eval_action_mse": 0.42672422528266907,
+      "label": "sqrt_horizon_penalty_0p85_seed_0",
+      "metrics_path": "runs/ogbench-horizon-tuning/sqrt_horizon_penalty_0p85_seed_0/metrics.jsonl",
+      "mode": "sqrt_horizon",
+      "penalty": 0.85,
+      "rollout_success_rate": 0.0,
+      "seed": 0,
+      "selected_horizon_histogram": {
+        "1": 200
+      },
+      "selected_horizon_mean": 1.0,
+      "target_horizon_mean": 1.075
+    },
+    {
+      "eval_action_mse": 0.42672422528266907,
+      "label": "sqrt_horizon_penalty_1p0_seed_0",
+      "metrics_path": "runs/ogbench-horizon-tuning/sqrt_horizon_penalty_1p0_seed_0/metrics.jsonl",
+      "mode": "sqrt_horizon",
+      "penalty": 1.0,
+      "rollout_success_rate": 0.0,
+      "seed": 0,
+      "selected_horizon_histogram": {
+        "1": 200
+      },
+      "selected_horizon_mean": 1.0,
+      "target_horizon_mean": 1.06
+    }
+  ]
+}

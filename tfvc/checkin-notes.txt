@@ -1,0 +1,193 @@
+TFVC continuation notes
+=======================
+
+Collection: https://dev.azure.com/bruhmoment123/
+Server path: $/RL
+Current workspace: MacTFVC
+Current mapping: $/RL -> /Users/Musa.Shams/Stuff/RL
+
+Create a machine-specific TFVC workspace and map $/RL to the desired local
+folder when continuing on another computer. Do not copy the .tf directory
+between computers.
+
+Git migration from a clean TFVC checkout
+----------------------------------------
+
+The tracked `.gitignore` makes a clean checkout ready for migration without
+including TFVC metadata, virtual environments, raw checkpoints, or generated
+submission ZIPs. On the destination computer:
+
+1. Create/map a TFVC workspace and get the latest $/RL recursively.
+2. Confirm `tf status` reports no pending changes.
+3. Do not copy `.tf` from another computer. Remove the local `.tf` directory
+   before Git migration if the Git repository should contain no TFVC metadata.
+4. Run:
+
+     git init
+     git add .
+     git status --short
+
+5. Confirm that only source, configs, tests, manuscript source, aggregate
+   tables/figures, and reproducibility documentation are staged.
+6. Create the initial Git commit, add the desired remote, and push according to
+   that host's access policy.
+
+The generated submission files `paper/main.pdf`, `paper/arxiv.pdf`, and
+`dist/*.zip` are intentionally ignored. Rebuild them with the tracked scripts.
+
+Windows PowerShell migration
+----------------------------
+
+Open Developer PowerShell for Visual Studio so `tf.exe` is on PATH. With an
+existing TFVC workspace mapping:
+
+  $TfvcPath = "C:\work\RL"
+  Set-Location $TfvcPath
+  tf get . /recursive
+  tf status . /recursive
+
+Confirm there are no pending changes. The tracked `.gitignore` excludes `.tf`,
+virtual environments, raw results, checkpoints, and generated packages, so
+Git can be initialized directly in the mapped folder:
+
+  git init
+  git add .
+  git status --short
+  git commit -m "Import SegBench-GC from TFVC"
+  git branch -M main
+  git remote add origin YOUR_GIT_REMOTE
+  git push -u origin main
+
+Record the latest TFVC changeset from `tf history` in the Git commit body if
+desired. Keeping `.tf` allows the checkout to remain dual TFVC/Git; it is
+ignored by Git. After the Git push is verified, a Git-only copy may remove the
+specific `.tf` directory with:
+
+  Remove-Item -Recurse -Force .tf
+
+Native Windows validation:
+
+  py -3.10 -m venv .venv
+  .\.venv\Scripts\python.exe -m pip install --upgrade pip setuptools wheel
+  .\.venv\Scripts\python.exe -m pip install -e ".[dev,benchmarks,analysis]"
+  .\.venv\Scripts\python.exe -m pytest
+  .\.venv\Scripts\python.exe scripts\analyze_segbench_gc_results.py
+  .\.venv\Scripts\python.exe scripts\build_anonymous_supplement.py
+  .\.venv\Scripts\python.exe scripts\build_arxiv_source.py
+
+The tracked experiment launchers and paper compile wrapper are Bash scripts.
+Use WSL or Git Bash for those launchers. Alternatively, compile directly from
+PowerShell by changing into `paper` and invoking a Windows Tectonic binary:
+
+  Push-Location paper
+  tectonic main.tex --keep-logs --keep-intermediates
+  tectonic arxiv.tex --keep-logs --keep-intermediates
+  Pop-Location
+
+Tracked continuation state
+--------------------------
+
+TFVC contains the complete source, configs, tests, experiment runners,
+aggregated paper tables, generated figures, and LaTeX manuscript. A clean
+checkout is sufficient for code development, paper editing, and reproducing
+the checked-in analyses.
+
+Current tracked milestone:
+
+- Latest reviewed research changeset: #193
+- Latest anonymous ICLR package changeset: #194
+- Latest ICLR compliance and submission-checklist changeset: #195
+- Latest arXiv and ICLR dual-package changeset: #196
+- Latest Git-migration portability changeset: #197
+- Completed aggregate evidence includes PointMaze Medium/Large, AntMaze
+  Medium, cut-density sweeps, fixed-H8, and random-cut 100k validation.
+- The next optional full-budget runners are tracked as:
+  - scripts/run_segmentation_random_full_gate.sh
+  - scripts/run_segmentation_fixed_h8_full_gate.sh
+- Run random cuts first. Fixed-H8 is conditional on the random-cut result and
+  remaining billing credit.
+
+ICLR 2027 package
+-----------------
+
+- Official ICLR style and bibliography files are tracked unmodified.
+- The anonymous main text ends on page 7; the complete paper is 9 pages.
+- Required AI-use and recommended ethics/reproducibility statements are
+  included before the references.
+- The deterministic anonymous supplement is built with:
+    python scripts/build_anonymous_supplement.py
+- Submission policy/deadline tasks are tracked in:
+    paper/iclr2027_submission_checklist.txt
+- The author-identified arXiv metadata and upload fields are tracked in:
+    paper/arxiv_submission_metadata.txt
+
+Recommended setup:
+
+  python3 -m venv .venv
+  .venv/bin/pip install -e '.[dev,rl,benchmarks,analysis]'
+  .venv/bin/python -m pytest
+  .venv/bin/python scripts/analyze_segbench_gc_results.py
+
+Avoid Git metadata and Git-derived experiment provenance. Experiment metadata
+uses TFVC changesets where available.
+
+Raw artifact boundary
+---------------------
+
+Large raw checkpoints and JSONL/log archives are intentionally excluded from
+TFVC. The authoritative aggregate CSV/JSON/LaTeX tables and PDF/SVG figures
+are tracked, so these archives are needed only for full raw reanalysis or
+checkpoint evaluation.
+
+Copy the following files separately from ~/Downloads. Byte sizes and SHA-256:
+
+segbench-gc-results.tar.gz
+  2532340928 bytes
+  490034b6d15562a1f7212abeb5a157174a2ee23d08082779ad2f7b68c28a4db2
+
+segbench-gc-final-results.tar.gz
+  1828256303 bytes
+  2c9e5cb7f51071cd1106e39f7b6c08b6c7c98bf8376060123e9b15ada9c8e079
+
+static-mixture-five-seed-results.tar.gz
+  282771619 bytes
+  125acc8331175aee95e2b5ea93904784c83c979384cfb122328f1773bca3d123
+
+corrected-seed0-results.tar.gz
+  112793112 bytes
+  e74e8afa9f7fcc2ea699da2c7e1a76cbd012095f1244cd8f1f6908d47b70e28a
+
+corrected-seeds1-2-results.tar.gz
+  225328539 bytes
+  b03174f418073c984c626d3dc5741ee6e5ef6d2a4bb9c98af215ec0d07254aa5
+
+corrected-seeds3-4-results.tar.gz
+  225482615 bytes
+  c89df7ffc6ebee8a0af935508907ba7325b7be39cc4d30563454f44f9279e188
+
+pytorch-control-seed0-results.tar.gz
+  56292569 bytes
+  ae4b14e75b9bd8253efd11af8ebe724cb1f01085d51acda7e02accfd0be7a2ad
+
+segbench-gc-broader-results.tar.gz
+  421977990 bytes
+  a7da4b90cdeca117bd80cba7897ca07d61eee56f9ecd0fcfa0c9ed72d95de0b0
+
+segbench-random-full-results.tar.gz
+  338669450 bytes
+  191f746112fd85dab37ce98be880070ceef5dada37e2da1203c4cf3b1fd2fa02
+
+segbench-fixed-h8-full-results.tar.gz
+  337040297 bytes
+  c0808ec036f2241d0dca62382e4a47bb385fefa338b95ebbe267929e4b5289dd
+
+segbench-cube-double-results.tar.gz
+  982880925 bytes
+  5014b17d318c46c073123b487360d91d618ede07e2b493644a4f186656a0a735
+
+segbench-final-pointmaze-controls.tar.gz
+  508440314 bytes
+  3da71fc4d437dbb1a15355b0d66b3c3d93c0f8b87a03b604322ae95ea8462723
+
+Extract the three SegBench/static archives at the repository root using their
+matching directory names before rerunning analyze_segbench_gc_results.py.

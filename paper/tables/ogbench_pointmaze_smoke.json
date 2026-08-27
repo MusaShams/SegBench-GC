@@ -1,0 +1,121 @@
+{
+  "aggregate": {
+    "ci_high": 0.4472384676337242,
+    "ci_low": 0.4338219240307808,
+    "iqm": 0.438103586435318,
+    "mean": 0.44007420539855957,
+    "median": 0.4371171295642853
+  },
+  "by_algorithm": {
+    "adaptive_iql": {
+      "ci_high": 0.44467514753341675,
+      "ci_low": 0.4333914518356323,
+      "iqm": 0.43768881758054096,
+      "mean": 0.43768881758054096,
+      "median": 0.43499985337257385
+    },
+    "iql": {
+      "ci_high": 0.4546394348144531,
+      "ci_low": 0.43350493907928467,
+      "iqm": 0.4424595932165782,
+      "mean": 0.4424595932165782,
+      "median": 0.4392344057559967
+    }
+  },
+  "runs": [
+    {
+      "algorithm": "iql",
+      "event": "eval",
+      "label": "iql_seed_0",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-pointmaze-multiseed/iql/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 0,
+      "selected_horizon_histogram": {},
+      "selected_horizon_mean": null,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.4392344057559967
+    },
+    {
+      "algorithm": "iql",
+      "event": "eval",
+      "label": "iql_seed_1",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-pointmaze-multiseed/iql/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 0,
+      "selected_horizon_histogram": {},
+      "selected_horizon_mean": null,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.43350493907928467
+    },
+    {
+      "algorithm": "iql",
+      "event": "eval",
+      "label": "iql_seed_2",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-pointmaze-multiseed/iql/seed_2/metrics.jsonl",
+      "seed": 2,
+      "selected_horizon_count": 0,
+      "selected_horizon_histogram": {},
+      "selected_horizon_mean": null,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.4546394348144531
+    },
+    {
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_seed_0",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-pointmaze-multiseed/adaptive_iql/seed_0/metrics.jsonl",
+      "seed": 0,
+      "selected_horizon_count": 100,
+      "selected_horizon_histogram": {
+        "1": 30,
+        "2": 70
+      },
+      "selected_horizon_mean": 1.7,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.4333914518356323
+    },
+    {
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_seed_1",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-pointmaze-multiseed/adaptive_iql/seed_1/metrics.jsonl",
+      "seed": 1,
+      "selected_horizon_count": 100,
+      "selected_horizon_histogram": {
+        "1": 91,
+        "8": 9
+      },
+      "selected_horizon_mean": 1.63,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.43499985337257385
+    },
+    {
+      "algorithm": "adaptive_iql",
+      "event": "eval",
+      "label": "adaptive_iql_seed_2",
+      "metric": "eval_action_mse",
+      "path": "runs/ogbench-pointmaze-multiseed/adaptive_iql/seed_2/metrics.jsonl",
+      "seed": 2,
+      "selected_horizon_count": 100,
+      "selected_horizon_histogram": {
+        "1": 75,
+        "2": 10,
+        "4": 15
+      },
+      "selected_horizon_mean": 1.55,
+      "suite": "ogbench",
+      "task": "pointmaze-medium-stitch-v0",
+      "value": 0.44467514753341675
+    }
+  ]
+}

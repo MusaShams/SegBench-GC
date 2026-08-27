@@ -1,0 +1,33 @@
+experiment,experiment_label,contrast,seeds,mean_difference,sample_std,seed_bootstrap_low,seed_bootstrap_high,paired_differences
+medium_10k,"PointMaze Medium, 10k",robust_minus_original,3,-0.05555555555555552,0.126197963240006,-0.19999999999999987,0.0333333333333333,"[0.0333333333333333, -0.1999999999999999, 5.551115123125783e-17]"
+medium_10k,"PointMaze Medium, 10k",naive_minus_original,3,-0.3444444444444444,0.15030832509409647,-0.5,-0.20000000000000004,"[-0.2, -0.5, -0.33333333333333337]"
+medium_10k,"PointMaze Medium, 10k",robust_minus_naive,3,0.288888888888889,0.05091750772173162,0.2333333333333333,0.3333333333333334,"[0.2333333333333333, 0.3000000000000001, 0.3333333333333334]"
+medium_10k,"PointMaze Medium, 10k",robust_retention,3,0.861111111111111,,,,
+medium_100k,"PointMaze Medium, 100k",robust_minus_original,3,-0.08000000000000003,0.13527749258468685,-0.21000000000000005,0.06,"[0.06, -0.21000000000000002, -0.09000000000000008]"
+medium_100k,"PointMaze Medium, 100k",naive_minus_original,3,-0.52,0.15099668870541502,-0.66,-0.36000000000000004,"[-0.36, -0.66, -0.54]"
+medium_100k,"PointMaze Medium, 100k",robust_minus_naive,3,0.43999999999999995,0.017320508075688773,0.42,0.45,"[0.42, 0.45, 0.44999999999999996]"
+medium_100k,"PointMaze Medium, 100k",robust_retention,3,0.846153846153846,,,,
+large_10k,"PointMaze Large, 10k",robust_minus_original,3,0.03333333333333335,0.057735026918962595,0.0,0.10000000000000003,"[0.0, 0.10000000000000003, 0.0]"
+large_10k,"PointMaze Large, 10k",naive_minus_original,3,-0.09999999999999998,0.09999999999999999,-0.19999999999999998,0.0,"[-0.19999999999999998, -0.09999999999999998, 0.0]"
+large_10k,"PointMaze Large, 10k",robust_minus_naive,3,0.13333333333333333,0.11547005383792515,0.0,0.20000000000000004,"[0.19999999999999998, 0.2, 0.0]"
+large_10k,"PointMaze Large, 10k",robust_retention,3,1.1111111111111112,,,,
+large_100k,"PointMaze Large, 100k",robust_minus_original,3,0.06666666666666667,0.09865765724632494,0.0,0.18000000000000002,"[0.020000000000000018, 0.18, 0.0]"
+large_100k,"PointMaze Large, 100k",naive_minus_original,3,-0.12666666666666668,0.11015141094572203,-0.20000000000000004,0.0,"[-0.18, 0.0, -0.2]"
+large_100k,"PointMaze Large, 100k",robust_minus_naive,3,0.19333333333333336,0.011547005383792526,0.18000000000000002,0.20000000000000004,"[0.2, 0.18, 0.2]"
+large_100k,"PointMaze Large, 100k",robust_retention,3,1.5263157894736843,,,,
+medium_1m,"PointMaze Medium, 1M",robust_minus_original,5,0.0016000000000000458,0.07666028958985216,-0.05599999999999994,0.06480000000000001,"[-0.04799999999999993, -0.07599999999999996, -0.03199999999999992, 0.10399999999999998, 0.06000000000000005]"
+medium_1m,"PointMaze Medium, 1M",naive_minus_original,5,-0.6672,0.05195382565317013,-0.7055999999999999,-0.624,"[-0.696, -0.712, -0.704, -0.628, -0.596]"
+medium_1m,"PointMaze Medium, 1M",robust_minus_naive,5,0.6688,0.03767227096950752,0.6448,0.7016,"[0.648, 0.636, 0.672, 0.732, 0.656]"
+medium_1m,"PointMaze Medium, 1M",robust_retention,5,1.0023980815347722,,,,
+antmaze_10k,"AntMaze Medium, 10k",robust_minus_original,3,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0]"
+antmaze_10k,"AntMaze Medium, 10k",naive_minus_original,3,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0]"
+antmaze_10k,"AntMaze Medium, 10k",robust_minus_naive,3,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0]"
+antmaze_10k,"AntMaze Medium, 10k",robust_retention,3,,,,,
+antmaze_100k,"AntMaze Medium, 100k",robust_minus_original,3,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0]"
+antmaze_100k,"AntMaze Medium, 100k",naive_minus_original,3,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0]"
+antmaze_100k,"AntMaze Medium, 100k",robust_minus_naive,3,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0]"
+antmaze_100k,"AntMaze Medium, 100k",robust_retention,3,,,,,
+antmaze_1m,"AntMaze Medium, 1M",robust_minus_original,3,-0.016000000000000004,0.06609084656743322,-0.06,0.06,"[0.06, -0.06, -0.048000000000000015]"
+antmaze_1m,"AntMaze Medium, 1M",naive_minus_original,3,-0.13733333333333334,0.05460158727851539,-0.19600000000000004,-0.08800000000000001,"[-0.088, -0.128, -0.196]"
+antmaze_1m,"AntMaze Medium, 1M",robust_minus_naive,3,0.12133333333333333,0.04618802153517005,0.068,0.148,"[0.148, 0.068, 0.148]"
+antmaze_1m,"AntMaze Medium, 1M",robust_retention,3,0.883495145631068,,,,

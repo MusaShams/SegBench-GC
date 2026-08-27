@@ -1,0 +1,18 @@
+{
+  "naive": {
+    "mean": 1.000689533021715,
+    "mean_offset_range_per_seed": 0.5017411311467489,
+    "variance": 0.10699477332741884
+  },
+  "offset_range_ratio_naive_over_robust": 4.182017205029723,
+  "original": {
+    "mean": 1.12296195824941,
+    "sample_std": 0.11725159727557856
+  },
+  "robust": {
+    "mean": 1.0331400169266596,
+    "mean_offset_range_per_seed": 0.11997586488723755,
+    "variance": 0.007813872240174154
+  },
+  "variance_ratio_naive_over_robust": 13.69292586808844
+}

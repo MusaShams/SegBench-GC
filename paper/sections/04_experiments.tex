@@ -1,0 +1,27 @@
+\section{Experiments}
+
+\subsection{Primary matched-count study}
+
+The primary study uses OGBench PointMaze Medium Stitch \cite{ogbench2024}. The learner has three 512-unit GELU layers with layer normalization, expectile $0.9$, batch size 1024, learning rate $3\times10^{-4}$, discount $0.99$, and DDPG+BC coefficient $\alpha=0.003$. We train for 100k updates with optimization seeds $\{0,1,2\}$.
+
+For each optimization seed, we evaluate three independently seeded artificial segmentations, $\{101,102,103\}$. Each segmentation contains exactly 35,000 artificial cuts sampled from eligible nonterminal locations, approximately 3.5\% of the eligible PointMaze stream. CVT and naive runs use the same cut set for each pair of optimization and segmentation seeds. The uncut Original condition has no artificial cuts. Final results use 50 episodes per evaluation task, or 250 rollouts per checkpoint.
+
+OGBench collection-trajectory ends are not task completion events. In all three conditions we hold source-boundary continuation semantics fixed and require a finite stored successor at every continuing source boundary. The only CVT-versus-naive difference is the bootstrap mask at an \emph{artificial} cut: CVT retains continuation, whereas naive handling zeros it. This isolates the intervention to the artificial backup boundaries.
+
+\subsection{Independent published $n$-step validation}
+
+To test whether the effect is specific to our horizon-indexed learner, we use the published NS baseline from the Decoupled Q-Chunking codebase \cite{li2026dqc} on Puzzle-4x5 Play. We use the paper's NS configuration with two critics, policy chunk size one, backup horizon $25$, no chunk critic, mean Q aggregation, expectile distillation, quantile implicit backup, $\kappa_b=0.7$, and batch size 4096. Training uses 250k updates. The training budget was selected from an Original-only learnability check before CVT or naive outcomes were examined.
+
+The independent validation uses optimization seeds $\{100001,200002,300003\}$ and one fixed artificial segmentation realization (seed 101) at the same 3.5\% cut density as the primary study. Pairing is verified directly: with the NumPy sampling state reset, CVT and naive minibatches are identical in every key except the artificial-cut continuation mask. Final reevaluation again uses 50 episodes per task. Because this validation uses one fixed segmentation realization, it provides evidence for cross-learner boundary-semantic sensitivity rather than a second segmentation-dispersion study.
+
+\subsection{Diagnostics and negative control}
+
+We use two mechanism diagnostics on the primary learner. First, a direct target calculation samples 32,768 replay starts and constructs CVT and naive targets from the same transitions and the same trained CVT value function, isolating the algebraic effect of the artificial-cut continuation mask. We check the identity
+$y_{\mathrm{naive}}-y_{\mathrm{CVT}}=-\gamma^kV(s_{t+k},g)$
+only on target slots affected by artificial cuts. Second, for all nine optimization/segmentation pairs we compare learned value and Q predictions at distances zero through eight transitions from the next artificial cut, using matched states and deterministically sampled future goals.
+
+One-step GCIQL serves as an exact negative control because it does not consume the artificial backup-boundary metadata used by the multi-step target constructor. Paired replay checks therefore require its sampled observations, goals, rewards, and masks to remain identical under artificial resegmentation.
+
+\subsection{Metrics and aggregation}
+
+The primary metric is mean success over the five fixed evaluation tasks. For the primary study, segmentation realizations are averaged within each optimization seed before means and sample standard deviations are computed across optimization seeds. We additionally report segmentation-seed means across optimization seeds to expose sensitivity to the arbitrary cut realization. For the independent validation, sample standard deviations are across the three optimization seeds under the one fixed segmentation realization. With three training seeds, all uncertainty summaries are descriptive rather than well-powered inferential confidence intervals \cite{agarwal2021statistical}.

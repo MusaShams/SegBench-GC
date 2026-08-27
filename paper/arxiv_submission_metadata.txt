@@ -1,0 +1,79 @@
+arXiv submission metadata
+=========================
+
+Title
+-----
+
+SegBench-GC: Testing Segmentation Invariance in Multi-Step Offline
+Goal-Conditioned Reinforcement Learning
+
+Author
+------
+
+Musa Shams (Independent Researcher)
+ORCID: 0009-0005-1015-5342
+Code: https://github.com/MusaShams/SegBench-GC
+
+Primary category
+----------------
+
+cs.LG (Machine Learning)
+
+Cross-list
+----------
+
+None recommended for v1.
+
+Suggested comments
+------------------
+
+11 pages, 2 tables. Code and reproducibility artifacts: https://github.com/MusaShams/SegBench-GC
+
+Abstract
+--------
+
+Offline goal-conditioned reinforcement learning (GCRL) often uses trajectory
+structure for future-goal sampling and multi-step targets, yet logged
+trajectories may be partitioned for administrative reasons that do not
+correspond to termination. We introduce SegBench-GC, a controlled stress test
+of segmentation invariance that holds transitions, source trajectories, goal
+sampling, optimization settings, and evaluation fixed while varying only
+artificial backup boundaries and whether those boundaries retain continuation
+value. Continuation-valid targets (CVT) provide the segmentation-consistent
+control: reward accumulation stops at an artificial cut, but the target
+bootstraps from its stored successor. In a matched-count PointMaze study with
+35,000 artificial cuts, three segmentation realizations, and three optimization
+seeds, final 50-episode-per-task success is 50.5% uncut, 39.1% with CVT, and
+19.1% when the same cuts are treated as absorbing; across segmentation
+realizations, naive mean success ranges from 4.8% to 31.9%. An independent
+published n-step baseline (n=25) from the Decoupled Q-Chunking codebase shows
+the same failure on Puzzle-4x5: 47.2% uncut, 58.5% CVT, and 0.27% naive across
+three optimization seeds. A target-level diagnostic verifies the analytic
+target difference to numerical precision, and learned-critic diagnostics show
+a large optimistic shift under naive handling while CVT remains approximately
+aligned with the uncut critic. CVT applies standard continuation bootstrapping
+rather than a new Bellman rule; the contribution is the controlled benchmark,
+failure isolation, and cross-learner evidence that administrative segmentation
+can materially change multi-step offline GCRL.
+
+Files to upload
+---------------
+
+Preferred source upload:
+  dist/segbench-gc-arxiv-source.zip
+
+Compiled preview:
+  paper/arxiv.pdf
+
+Current SHA-256
+---------------
+
+Regenerate paper/arxiv.pdf and dist/segbench-gc-arxiv-source.zip after the
+final source build.
+
+Recommended license
+-------------------
+
+Creative Commons Attribution 4.0 International (CC BY 4.0), matching the
+LayerRAG-Bench arXiv release and allowing redistribution and adaptation with
+attribution. The author must make the final license selection during submission.

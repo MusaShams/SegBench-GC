@@ -1,0 +1,42 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{newtxtext}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{newtxmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{natbib}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\usepackage{url}
+\emergencystretch=2em
+
+\title{SegBench-GC: Testing Segmentation Invariance in Multi-Step Offline Goal-Conditioned Reinforcement Learning}
+\author{Musa Shams\\Independent Researcher\\\href{https://orcid.org/0009-0005-1015-5342}{ORCID: 0009-0005-1015-5342}\quad\href{https://github.com/MusaShams/SegBench-GC}{github.com/MusaShams/SegBench-GC}}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Offline goal-conditioned reinforcement learning (GCRL) often uses trajectory structure for future-goal sampling and multi-step targets, yet logged trajectories may be partitioned for administrative reasons that do not correspond to termination. We introduce SegBench-GC, a controlled stress test of \emph{segmentation invariance} that holds transitions, source trajectories, goal sampling, optimization settings, and evaluation fixed while varying only artificial backup boundaries and whether those boundaries retain continuation value. Continuation-valid targets (CVT) provide the segmentation-consistent control: reward accumulation stops at an artificial cut, but the target bootstraps from its stored successor. In a matched-count PointMaze study with 35,000 artificial cuts, three segmentation realizations, and three optimization seeds, final 50-episode-per-task success is 50.5\% uncut, 39.1\% with CVT, and 19.1\% when the same cuts are treated as absorbing; across segmentation realizations, naive mean success ranges from 4.8\% to 31.9\%. An independent published $n$-step baseline ($n=25$) from the Decoupled Q-Chunking codebase shows the same failure on Puzzle-4x5: 47.2\% uncut, 58.5\% CVT, and 0.27\% naive across three optimization seeds. A target-level diagnostic verifies $y_{\mathrm{naive}}-y_{\mathrm{CVT}}=-\gamma^k V(s_{t+k},g)$ to numerical precision, and learned-critic diagnostics show a large optimistic shift under naive handling while CVT remains approximately aligned with the uncut critic. CVT applies standard continuation bootstrapping rather than a new Bellman rule; the contribution is the controlled benchmark, failure isolation, and cross-learner evidence that administrative segmentation can materially change multi-step offline GCRL.
+\end{abstract}
+
+\input{sections/01_intro}
+\input{sections/02_related_work}
+\input{sections/03_method}
+\input{sections/04_experiments}
+\input{sections/05_results}
+\input{sections/06_limitations}
+\input{sections/06b_conclusion}
+\input{sections/07_statements}
+
+\bibliographystyle{iclr2027_conference}
+\bibliography{references}
+
+\appendix
+\input{sections/08_appendix}
+
+\end{document}

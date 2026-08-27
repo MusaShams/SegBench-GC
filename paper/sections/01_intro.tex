@@ -1,0 +1,17 @@
+\section{Introduction}
+
+Offline goal-conditioned reinforcement learning (GCRL) promises reusable control policies from fixed datasets without task-specific online interaction. Modern methods exploit trajectory structure to sample future goals and construct multi-step targets, making episode boundaries part of the learning problem rather than inert metadata \cite{ogbench2024}.
+
+Those boundaries need not represent true task termination. Data collectors split streams at time limits, storage limits, worker restarts, or preprocessing boundaries, and multi-step learners commonly train from fixed windows or chunks whose endpoints truncate a return even when the underlying process continues. Treating such administrative cuts as absorbing states removes continuation value from multi-step targets. Correct bootstrapping at nonterminal truncations is established theory \cite{pardo2018timelimits}, but the sensitivity of offline GCRL to arbitrary segmentation has not been isolated while holding transitions, source-trajectory semantics, future-goal sampling, optimization settings, and evaluation fixed.
+
+We study \emph{segmentation invariance}: a trajectory-aware offline GCRL result should be stable, up to optimization noise, when identical logged transitions are partitioned at different nonterminal locations. SegBench-GC separates source-trajectory boundaries used for goal sampling from artificial \emph{backup} boundaries used only to truncate a multi-step target. This separation prevents resegmentation from silently changing the goal distribution or the underlying logged process.
+
+Our contributions are:
+\begin{itemize}
+  \item a controlled segmentation-invariance protocol for offline GCRL in which transition tuples, source trajectories, sampled-goal semantics, optimization settings, and evaluation are fixed while artificial backup boundaries are varied;
+  \item a continuation-valid control that preserves standard nonterminal bootstrapping at artificial cuts while leaving genuine goal completion noncontinuing;
+  \item a matched-count PointMaze study over three optimization seeds and three independent segmentation realizations showing a large performance penalty and strong segmentation sensitivity when only the artificial cuts are treated as absorbing;
+  \item target- and critic-level mechanism diagnostics, together with an independent replication using the published $n$-step ($n=25$) baseline from the Decoupled Q-Chunking codebase \cite{li2026dqc}.
+\end{itemize}
+
+Empirically, artificial-terminal handling reduces primary mean success by 20.0 percentage points relative to CVT and increases segmentation dispersion from 3.4 to 13.6 points. In the independent Puzzle-4x5 validation, the same intervention reduces mean success from 58.5\% with CVT to 0.27\%. These results support a deliberately scoped claim: multi-step offline GCRL can be sensitive to administrative segmentation when backup boundaries are treated as terminals. CVT is not proposed to outperform correctly uncut data; it is the continuation-consistent control for this intervention.
