@@ -29,6 +29,9 @@ def test_anonymous_supplement_is_deterministic_and_scanned(
         assert "paper/arxiv.tex" not in names
         assert "paper/arxiv.pdf" not in names
         assert "paper/arxiv_submission_metadata.txt" not in names
+        # This test intentionally verifies author-identifying arXiv metadata and
+        # therefore must never be shipped in the anonymous ICLR supplement.
+        assert "tests/test_arxiv_package.py" not in names
         for name in names:
             if name.endswith(
                 (

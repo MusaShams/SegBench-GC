@@ -8,14 +8,22 @@ def test_arxiv_manuscript_identifies_solo_author() -> None:
     source = Path("paper/arxiv.tex").read_text(encoding="utf-8")
     author_name = "".join(("Musa", " ", "Shams"))
 
-    assert rf"\author{{{author_name}\\Independent Researcher}}" in source
+    assert rf"\author{{{author_name}\\Independent Researcher" in source
+    assert "0009-0005-1015-5342" in source
+    assert "github.com/MusaShams/SegBench-GC" in source
     assert "iclrfinalcopy" not in source
     assert r"\input{sections/07_statements}" in source
     assert r"\appendix" in source
+
+    # The public arXiv manuscript intentionally omits the ICLR-only AI-use
+    # disclosure while retaining the shared ethics/reproducibility statements.
+    assert "AI use statement" not in source
     statements = Path("paper/sections/07_statements.tex").read_text(
         encoding="utf-8"
     )
-    assert "The author reviewed all AI-assisted work" in statements
+    assert "AI use statement" not in statements
+    assert "Ethics statement" in statements
+    assert "Reproducibility statement" in statements
 
 
 def test_arxiv_source_archive_is_deterministic(tmp_path) -> None:

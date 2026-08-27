@@ -41,11 +41,10 @@ def main() -> None:
         raise ValueError(
             "Submission must remain anonymous; iclrfinalcopy is enabled."
         )
-    for heading in (
-        "AI use statement",
-        "Ethics statement",
-        "Reproducibility statement",
-    ):
+
+    if "AI use statement" not in main_tex:
+        raise ValueError("Missing required paper section: AI use statement")
+    for heading in ("Ethics statement", "Reproducibility statement"):
         if heading not in statements:
             raise ValueError(f"Missing required paper section: {heading}")
 

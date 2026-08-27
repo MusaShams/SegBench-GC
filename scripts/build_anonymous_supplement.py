@@ -29,6 +29,7 @@ TEXT_SUFFIXES = {
 EXCLUDED_NAMES = {
     ".DS_Store",
     "build_anonymous_supplement.py",
+    "test_arxiv_package.py",
     "iclr2027_submission_checklist.txt",
     "main.aux",
     "main.bbl",
@@ -69,6 +70,7 @@ FORBIDDEN = (
     "Musa Shams",
     "MusaShams",
     "github.com/MusaShams",
+    "0009-0005-1015-5342",
     "bruhmoment123",
     "adaptive-gcrl-research-unique",
     "project-655d82d0",

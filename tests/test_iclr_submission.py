@@ -10,7 +10,7 @@ def test_iclr_source_is_anonymous_and_has_required_sections() -> None:
     assert r"\usepackage{iclr2027_conference}" in main
     assert "% \\iclrfinalcopy" in main
     assert "\n\\iclrfinalcopy" not in main
-    assert "AI use statement" in statements
+    assert "AI use statement" in main
     assert "Ethics statement" in statements
     assert "Reproducibility statement" in statements
 
